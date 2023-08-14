@@ -1,0 +1,510 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "local_names": {
+        "type": "object",
+        "properties": {
+          "si": {
+            "type": "string"
+          },
+          "ta": {
+            "type": "string"
+          },
+          "ia": {
+            "type": "string"
+          },
+          "ja": {
+            "type": "string"
+          },
+          "el": {
+            "type": "string"
+          },
+          "ko": {
+            "type": "string"
+          },
+          "eu": {
+            "type": "string"
+          },
+          "li": {
+            "type": "string"
+          },
+          "sh": {
+            "type": "string"
+          },
+          "cs": {
+            "type": "string"
+          },
+          "mn": {
+            "type": "string"
+          },
+          "fy": {
+            "type": "string"
+          },
+          "mt": {
+            "type": "string"
+          },
+          "my": {
+            "type": "string"
+          },
+          "an": {
+            "type": "string"
+          },
+          "io": {
+            "type": "string"
+          },
+          "sv": {
+            "type": "string"
+          },
+          "he": {
+            "type": "string"
+          },
+          "sk": {
+            "type": "string"
+          },
+          "ps": {
+            "type": "string"
+          },
+          "zh": {
+            "type": "string"
+          },
+          "ga": {
+            "type": "string"
+          },
+          "az": {
+            "type": "string"
+          },
+          "da": {
+            "type": "string"
+          },
+          "ku": {
+            "type": "string"
+          },
+          "os": {
+            "type": "string"
+          },
+          "fa": {
+            "type": "string"
+          },
+          "su": {
+            "type": "string"
+          },
+          "la": {
+            "type": "string"
+          },
+          "ty": {
+            "type": "string"
+          },
+          "sc": {
+            "type": "string"
+          },
+          "br": {
+            "type": "string"
+          },
+          "nn": {
+            "type": "string"
+          },
+          "fi": {
+            "type": "string"
+          },
+          "hu": {
+            "type": "string"
+          },
+          "kn": {
+            "type": "string"
+          },
+          "it": {
+            "type": "string"
+          },
+          "lt": {
+            "type": "string"
+          },
+          "lv": {
+            "type": "string"
+          },
+          "qu": {
+            "type": "string"
+          },
+          "ro": {
+            "type": "string"
+          },
+          "ur": {
+            "type": "string"
+          },
+          "no": {
+            "type": "string"
+          },
+          "tg": {
+            "type": "string"
+          },
+          "nl": {
+            "type": "string"
+          },
+          "zu": {
+            "type": "string"
+          },
+          "mr": {
+            "type": "string"
+          },
+          "en": {
+            "type": "string"
+          },
+          "pt": {
+            "type": "string"
+          },
+          "es": {
+            "type": "string"
+          },
+          "hr": {
+            "type": "string"
+          },
+          "sq": {
+            "type": "string"
+          },
+          "iu": {
+            "type": "string"
+          },
+          "ie": {
+            "type": "string"
+          },
+          "cu": {
+            "type": "string"
+          },
+          "sw": {
+            "type": "string"
+          },
+          "ar": {
+            "type": "string"
+          },
+          "sl": {
+            "type": "string"
+          },
+          "fr": {
+            "type": "string"
+          },
+          "fo": {
+            "type": "string"
+          },
+          "lg": {
+            "type": "string"
+          },
+          "sr": {
+            "type": "string"
+          },
+          "is": {
+            "type": "string"
+          },
+          "gn": {
+            "type": "string"
+          },
+          "th": {
+            "type": "string"
+          },
+          "tl": {
+            "type": "string"
+          },
+          "ca": {
+            "type": "string"
+          },
+          "ht": {
+            "type": "string"
+          },
+          "ms": {
+            "type": "string"
+          },
+          "ka": {
+            "type": "string"
+          },
+          "ug": {
+            "type": "string"
+          },
+          "bs": {
+            "type": "string"
+          },
+          "af": {
+            "type": "string"
+          },
+          "ml": {
+            "type": "string"
+          },
+          "vi": {
+            "type": "string"
+          },
+          "gv": {
+            "type": "string"
+          },
+          "tr": {
+            "type": "string"
+          },
+          "tt": {
+            "type": "string"
+          },
+          "hy": {
+            "type": "string"
+          },
+          "be": {
+            "type": "string"
+          },
+          "so": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "mi": {
+            "type": "string"
+          },
+          "eo": {
+            "type": "string"
+          },
+          "ab": {
+            "type": "string"
+          },
+          "yi": {
+            "type": "string"
+          },
+          "na": {
+            "type": "string"
+          },
+          "bi": {
+            "type": "string"
+          },
+          "se": {
+            "type": "string"
+          },
+          "am": {
+            "type": "string"
+          },
+          "te": {
+            "type": "string"
+          },
+          "mk": {
+            "type": "string"
+          },
+          "pl": {
+            "type": "string"
+          },
+          "rm": {
+            "type": "string"
+          },
+          "wo": {
+            "type": "string"
+          },
+          "kv": {
+            "type": "string"
+          },
+          "et": {
+            "type": "string"
+          },
+          "mg": {
+            "type": "string"
+          },
+          "gd": {
+            "type": "string"
+          },
+          "cv": {
+            "type": "string"
+          },
+          "lb": {
+            "type": "string"
+          },
+          "kk": {
+            "type": "string"
+          },
+          "bg": {
+            "type": "string"
+          },
+          "ky": {
+            "type": "string"
+          },
+          "cy": {
+            "type": "string"
+          },
+          "ln": {
+            "type": "string"
+          },
+          "gl": {
+            "type": "string"
+          },
+          "bn": {
+            "type": "string"
+          },
+          "de": {
+            "type": "string"
+          },
+          "yo": {
+            "type": "string"
+          },
+          "jv": {
+            "type": "string"
+          },
+          "oc": {
+            "type": "string"
+          },
+          "kw": {
+            "type": "string"
+          },
+          "hi": {
+            "type": "string"
+          },
+          "uk": {
+            "type": "string"
+          },
+          "ba": {
+            "type": "string"
+          },
+          "bo": {
+            "type": "string"
+          },
+          "uz": {
+            "type": "string"
+          },
+          "co": {
+            "type": "string"
+          },
+          "ru": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "si",
+          "ta",
+          "ia",
+          "ja",
+          "el",
+          "ko",
+          "eu",
+          "li",
+          "sh",
+          "cs",
+          "mn",
+          "fy",
+          "mt",
+          "my",
+          "an",
+          "io",
+          "sv",
+          "he",
+          "sk",
+          "ps",
+          "zh",
+          "ga",
+          "az",
+          "da",
+          "ku",
+          "os",
+          "fa",
+          "su",
+          "la",
+          "ty",
+          "sc",
+          "br",
+          "nn",
+          "fi",
+          "hu",
+          "kn",
+          "it",
+          "lt",
+          "lv",
+          "qu",
+          "ro",
+          "ur",
+          "no",
+          "tg",
+          "nl",
+          "zu",
+          "mr",
+          "en",
+          "pt",
+          "es",
+          "hr",
+          "sq",
+          "iu",
+          "ie",
+          "cu",
+          "sw",
+          "ar",
+          "sl",
+          "fr",
+          "fo",
+          "lg",
+          "sr",
+          "is",
+          "gn",
+          "th",
+          "tl",
+          "ca",
+          "ht",
+          "ms",
+          "ka",
+          "ug",
+          "bs",
+          "af",
+          "ml",
+          "vi",
+          "gv",
+          "tr",
+          "tt",
+          "hy",
+          "be",
+          "so",
+          "id",
+          "mi",
+          "eo",
+          "ab",
+          "yi",
+          "na",
+          "bi",
+          "se",
+          "am",
+          "te",
+          "mk",
+          "pl",
+          "rm",
+          "wo",
+          "kv",
+          "et",
+          "mg",
+          "gd",
+          "cv",
+          "lb",
+          "kk",
+          "bg",
+          "ky",
+          "cy",
+          "ln",
+          "gl",
+          "bn",
+          "de",
+          "yo",
+          "jv",
+          "oc",
+          "kw",
+          "hi",
+          "uk",
+          "ba",
+          "bo",
+          "uz",
+          "co",
+          "ru"
+        ]
+      },
+      "lat": {
+        "type": "number"
+      },
+      "lon": {
+        "type": "number"
+      },
+      "country": {
+        "type": "string"
+      }
+    },
+    "required": ["name", "local_names", "lat", "lon", "country"]
+  }
+}
