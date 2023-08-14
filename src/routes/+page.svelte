@@ -1,8 +1,8 @@
 <script lang="ts">
   export let data;
-  //   console.log(data);
+  console.log('page', data);
 </script>
 
-<p>{data.name}</p>
-<p>{data.country}</p>
-<p>{data.lat}, {data.lon}</p>
+<p>{data.geodata.name}</p>
+<p>{data.geodata.country}</p>
+<p>{data.geodata.lat}, {data.geodata.lon}</p>
