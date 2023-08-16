@@ -1,21 +1,6 @@
 <script lang="ts">
   import Header from "./Header.svelte";
   import Wx from "./Wx.svelte";
-  import { onMount } from "svelte";
-  let parms = new URLSearchParams({
-    city: "Paris",
-    country: "FR",
-  }).toString();
-  let response;
-  let wxdata;
-
-  onMount(async () => {
-    response = await fetch(`/.netlify/functions/wxconn?${parms}`, {
-      headers: { "Content-Type": "application/json" },
-    });
-    wxdata = await response.json();
-    console.dir(wxdata);
-  });
 </script>
 
 <div class="wrapper">
