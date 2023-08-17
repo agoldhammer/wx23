@@ -1,24 +1,12 @@
 <script lang="ts">
-  const city_groups = ["Capitals", "US", "France"];
-  type City = { city: string; country: string };
-  const paris: City = { city: "Paris", country: "FR" };
-  const group_to_cities = new Map([["Capitals", paris]]);
+  export let selected_city_group; // this is passed to parent App
+  export let city_groups: string[]; // def received from parent App
 
   function process(event: any): void {
-    console.log("click", event.target.id);
-    let city = group_to_cities.get(event.target.id) as City;
-    console.log(city);
-    getCityData(city);
-  }
-
-  async function getCityData(city: City) {
-    const parms = new URLSearchParams(city).toString();
-    console.log("parms", parms);
-    const response = await fetch(`/.netlify/functions/wxconn?${parms}`, {
-      headers: { "Content-Type": "application/json" },
-    });
-    const wxdata = await response.json();
-    console.dir(wxdata);
+    selected_city_group = event.target.id;
+    // let city = group_to_cities.get(event.target.id) as City;
+    // console.log(city);
+    // getCityData(city);
   }
 </script>
 
