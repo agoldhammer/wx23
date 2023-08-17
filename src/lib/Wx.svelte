@@ -8,6 +8,7 @@
   let dataLine = {
     // labels: ["January", "February", "March", "April", "May", "June", "July"],
     labels: wxdata.times_text,
+    // labels: wxdata.times,
     datasets: [
       {
         label: "temps",
@@ -57,4 +58,9 @@
   };
 </script>
 
-<Line data={dataLine} options={{ responsive: true }} />
+<div>
+  <Line
+    data={dataLine}
+    options={{ responsive: true, maintainAspectRatio: false }}
+  />
+</div>

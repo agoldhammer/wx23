@@ -17,16 +17,17 @@
     ["France", [paris]],
   ]);
 
-  function group_to_city_list(city_group: string): any {
+  function group_to_city_list(city_group: string): City[] {
+    console.log("g2clist called with:", city_group, selected_cities);
     if (city_group === "None") {
       city_group = "Capitals";
     }
     const city_list = group_to_cities.get(city_group);
-    return city_list;
+    return city_list || [paris];
   }
   $: selected_cities = group_to_city_list(selected_city_group);
 
-  async function selChange() {
+  async function selChange(selected_cities: City[]) {
     let first_city = city_list_to_first_city(selected_cities);
     let data = await getCityData(first_city);
     console.log("onmount", first_city, data);
@@ -35,7 +36,7 @@
   }
 
   onMount(async () => {
-    wxdata = await selChange();
+    wxdata = await selChange(selected_cities);
     showgraph = true;
   });
 
@@ -58,13 +59,28 @@
     return data;
   }
 
+  async function resetCityData() {
+    console.log("resetting city data", selected_city);
+    wxdata = await getCityData(selected_city);
+  }
+
   $: selected_city = city_list_to_first_city(selected_cities);
+
+  function onCityChange(node: any, selected_city: any) {
+    return {
+      update(selected_city: any) {
+        resetCityData();
+      },
+    };
+  }
 </script>
 
-<div class="wrapper">
+<div use:onCityChange={selected_city} class="wrapper">
   <Header bind:selected_city_group {city_groups} />
   {#if showgraph}
-    <Wx {wxdata} />
+    {#key wxdata}
+      <Wx {wxdata} />
+    {/key}
   {/if}
 </div>
 
