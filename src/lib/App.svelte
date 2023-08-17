@@ -5,6 +5,7 @@
 
   let selected_city_group = "None";
   let wxdata: any;
+  let showgraph: boolean = false;
 
   const city_groups: string[] = ["Capitals", "US", "France"];
   type City = { city: string; country: string };
@@ -25,15 +26,18 @@
   }
   $: selected_cities = group_to_city_list(selected_city_group);
 
-  onMount(async () => {
+  async function selChange() {
     let first_city = city_list_to_first_city(selected_cities);
-    wxdata = await getCityData(first_city);
-    console.log("onmount", wxdata);
-  });
+    let data = await getCityData(first_city);
+    console.log("onmount", first_city, data);
+    console.log("showgraph", showgraph);
+    return data;
+  }
 
-  // import { Chart as ChartJS } from "chart.js";
-  import { Line } from "svelte-chartjs";
-  import "chart.js/auto";
+  onMount(async () => {
+    wxdata = await selChange();
+    showgraph = true;
+  });
 
   function city_list_to_first_city(city_list: City[]): any {
     console.log("WX first", city_list);
@@ -59,7 +63,9 @@
 
 <div class="wrapper">
   <Header bind:selected_city_group {city_groups} />
-  <Wx {wxdata} />
+  {#if showgraph}
+    <Wx {wxdata} />
+  {/if}
 </div>
 
 <style>
@@ -70,7 +76,7 @@
     border: 2px solid blue;
     border-radius: 10px;
     height: 98svh;
-    background-color: lightslategray;
+    background-color: rgb(220, 225, 230);
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 8fr;
     gap: 0.3em;
