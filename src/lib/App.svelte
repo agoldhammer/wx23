@@ -77,11 +77,14 @@
 
 <div use:onCityChange={selected_city} class="wrapper">
   <Header bind:selected_city_group {city_groups} />
-  {#if showgraph}
-    {#key wxdata}
-      <Wx {wxdata} />
-    {/key}
-  {/if}
+  <div class="graphs">
+    {#if showgraph}
+      {#key wxdata}
+        <Wx {wxdata} />
+      {/key}
+    {/if}
+    <hr class="rule" />
+  </div>
 </div>
 
 <style>
@@ -94,10 +97,21 @@
     height: 98svh;
     background-color: rgb(220, 225, 230);
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 8fr;
+    /* grid-template-rows: 1fr 8fr; */
     gap: 0.3em;
     grid-template-areas:
       "hdr"
       "wxcontent";
+  }
+
+  .graphs {
+    grid-area: "wxcontent";
+    overflow-y: scroll;
+  }
+
+  .rule {
+    width: 50%;
+    height: 2px;
+    color: gray;
   }
 </style>

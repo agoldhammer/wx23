@@ -56,7 +56,7 @@
   };
 </script>
 
-<div>
+<div class="city">
   <Line
     data={dataLine}
     options={{
@@ -68,3 +68,23 @@
     }}
   />
 </div>
+
+<div class="city">
+  <Line
+    data={dataLine}
+    options={{
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: { display: true, text: `${wxdata.city}, ${wxdata.country}` },
+      },
+    }}
+  />
+</div>
+
+<style>
+  .city {
+    height: 400px;
+    /* overflow-y: auto; */
+  }
+</style>
