@@ -5,20 +5,19 @@ exports.handler = async event => {
   let country = event.queryStringParameters.country;
   // console.log ('citycoun', city, country);
 
-  let response = await fetch (
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}%2C${country}&limit=1&appid=${appid}`,
-    {
-      method: 'GET',
-    }
-  );
+  const geoapi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}%2C${country}&limit=1&appid=${appid}`;
+  let response = await fetch (geoapi, {method: 'GET'});
 
   let geodata_list = await response.json ();
   let geodata = geodata_list[0];
   let {lat, lon} = geodata;
 
-  let wxapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appid}&units=imperial`;
+  const wxapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appid}&units=imperial`;
   // console.log ('wxapi', wxapi);
   let wxresponse = await fetch (wxapi, {method: 'GET'});
+  if (!wxresponse.ok) {
+    throw Error (wxresponse.statusText);
+  }
   wxval = await wxresponse.json ();
 
   let times = [];
