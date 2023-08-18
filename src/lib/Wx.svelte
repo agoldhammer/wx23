@@ -2,12 +2,9 @@
   import { Line } from "svelte-chartjs";
   import { Chart } from "chart.js/auto";
   import type { ChartData, ChartDataset } from "chart.js";
-  // type CD = typeof ChartData;
   export let wxdata: any;
 
-  // @ts-ignore: Object is possibly 'null'.
-  let dataLine: ChartData<"line"> = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+  let dataLine: ChartData<"line", number[]> = {
     labels: wxdata.times_text,
     // labels: wxdata.times,
     datasets: [
@@ -32,7 +29,7 @@
         pointHitRadius: 10,
         // data: [65, 59, 80, 81, 56, 55, 40],
         data: wxdata.temps,
-      } as ChartDataset<"line">,
+      } as ChartDataset<"line", number[]>,
       // {
       //   label: "mintemps",
       //   fill: true,
