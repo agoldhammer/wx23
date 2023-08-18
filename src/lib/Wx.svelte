@@ -59,6 +59,10 @@
 <div>
   <Line
     data={dataLine}
-    options={{ responsive: true, maintainAspectRatio: false }}
+    options={{
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { title: { display: true, text: "Cityname" } },
+    }}
   />
 </div>
