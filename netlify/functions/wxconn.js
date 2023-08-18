@@ -17,7 +17,7 @@ exports.handler = async event => {
   let {name, coun, lat, lon} = geodata;
   let retval = JSON.stringify ({geodata: geodata});
 
-  let wxapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appid}`;
+  let wxapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appid}&units=imperial`;
   console.log ('wxapi', wxapi);
   let wxresponse = await fetch (wxapi, {method: 'GET'});
   wxval = await wxresponse.json ();
