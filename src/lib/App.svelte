@@ -18,7 +18,7 @@
   ]);
 
   function group_to_city_list(city_group: string): City[] {
-    console.log("g2clist called with:", city_group, selected_cities);
+    // console.log("g2clist called with:", city_group, selected_cities);
     if (city_group === "None") {
       city_group = "Capitals";
     }
@@ -30,8 +30,8 @@
   async function selChange(selected_cities: City[]) {
     let first_city = city_list_to_first_city(selected_cities);
     let data = await getCityData(first_city);
-    console.log("onmount", first_city, data);
-    console.log("showgraph", showgraph);
+    // console.log("onmount", first_city, data);
+    // console.log("showgraph", showgraph);
     return data;
   }
 
@@ -41,7 +41,7 @@
   });
 
   function city_list_to_first_city(city_list: City[]): any {
-    console.log("WX first", city_list);
+    // console.log("WX first", city_list);
     if (city_list.length) {
       return city_list[0];
     } else {
@@ -51,7 +51,7 @@
 
   async function getCityData(city: City) {
     const parms = new URLSearchParams(city).toString();
-    console.log("parms", parms);
+    // console.log("parms", parms);
     const response = await fetch(`/.netlify/functions/wxconn?${parms}`, {
       headers: { "Content-Type": "application/json" },
     });
@@ -60,7 +60,7 @@
   }
 
   async function resetCityData() {
-    console.log("resetting city data", selected_city);
+    // console.log("resetting city data", selected_city);
     wxdata = await getCityData(selected_city);
   }
 

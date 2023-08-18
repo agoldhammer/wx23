@@ -69,7 +69,7 @@
   />
 </div>
 
-<div class="city">
+<!-- <div class="city">
   <Line
     data={dataLine}
     options={{
@@ -80,7 +80,7 @@
       },
     }}
   />
-</div>
+</div> -->
 
 <style>
   .city {

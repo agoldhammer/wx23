@@ -4,9 +4,6 @@
 
   function process(event: any): void {
     selected_city_group = event.target.id;
-    // let city = group_to_cities.get(event.target.id) as City;
-    // console.log(city);
-    // getCityData(city);
   }
 </script>
 
