@@ -14,8 +14,10 @@ exports.handler = async event => {
 
   let geodata_list = await response.json ();
   let geodata = geodata_list[0];
-  let {name, coun, lat, lon} = geodata;
-  let retval = JSON.stringify ({geodata: geodata});
+  let {lat, lon} = geodata;
+  // console.log ('wxconn', geodata);
+  // console.log ('wxconn-name,country', name, coun);
+  // let retval = JSON.stringify ({geodata: geodata});
 
   let wxapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appid}&units=imperial`;
   console.log ('wxapi', wxapi);
@@ -47,11 +49,13 @@ exports.handler = async event => {
     visibilities.push (x.visibility);
     times_text.push (x.dt_txt);
   });
-  console.log ('wxconn-times', times);
-  console.log ('wxconn-temps', temps);
-  console.log ('wxconn-pressures', pressures);
+  // console.log ('wxconn-times', times);
+  // console.log ('wxconn-temps', temps);
+  // console.log ('wxconn-pressures', pressures);
 
   wxret = {
+    city: city,
+    country: country,
     times: times,
     temps: temps,
     pressures: pressures,

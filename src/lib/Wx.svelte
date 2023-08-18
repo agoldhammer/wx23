@@ -62,7 +62,9 @@
     options={{
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { title: { display: true, text: "Cityname" } },
+      plugins: {
+        title: { display: true, text: `${wxdata.city}, ${wxdata.country}` },
+      },
     }}
   />
 </div>
