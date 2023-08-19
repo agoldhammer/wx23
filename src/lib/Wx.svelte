@@ -75,6 +75,11 @@
           grid: {
             drawOnChartArea: false,
           },
+          ticks: {
+            callback: (value, index, ticks) => {
+              return value; // needed to eliminate comma
+            },
+          },
         },
       },
       plugins: {

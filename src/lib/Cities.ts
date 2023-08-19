@@ -11,21 +11,88 @@ const strasbourg: City = {city: "Strasbourg", country: "FR"};
 // US cities
 const wash: City = {city: "Washington", country: "US"};
 const newyork: City = { city: "New York", country: "US" };
+const bost: City = {city: "Boston", country: "US"};
 
 // GB cities
 const london: City = {city: "London", country: "GB"};
 const birmingham: City = {city: "Birmingham", country: "GB"};
 const manchester: City = {city: "Manchester", country: "GB"};
 
+// German cities
+const berlin: City = {city: "Berlin", country: "DE"};
+const duss: City = {city: "Düsseldorf", country: "DE"};
+const koln: City = {city: "Köln", country: "DE"};
+const bonn: City = {city: "Bonn", country: "DE"};
+const frank: City = {city: "Frankfurt", country: "DE"};
+const hamb: City = {city: "Hamburg", country: "DE"};
+
+// Italian cities
+const rome: City = {city: "Rome", country: "IT"};
+const milan: City = {city: "Milan", country: "IT"};
+const naples: City = {city: "Naples", country: "IT"};
+const flo: City = {city: "Florence", country: "IT"};
+const pal: City = {city: "Palermo", country: "IT"};
+const siena: City = {city: "Siena", country: "IT"};
+const venice: City = {city: "Venice", country: "IT"};
+
+// Swiss cities
+const geneva: City = {city: "Geneva", country: "CH"};
+const zurich: City = {city: "Zurich", country: "CH"};
+const bern: City = {city: "Bern", country: "CH"};
+
+// Austrian cities
+const vienna: City = {city: "Vienna", country: "AT"};
+const inns: City = {city: "Innsbruck", country: "AT"};
+const salz: City = {city: "Salzburg", country: "AT"};
+
+// Spanish cities
+const madrid: City = {city: "Madrid", country: "ES"};
+const barcel: City = {city: "Barcelona", country: "ES"};
+
+// Portugal
+const lisbon: City = {city: "Lisbon", country: "PT"};
+
+// Polish cities
+const warsaw: City = {city: "Warsaw", country: "PL"};
+const danzig: City = {city: "Danzig", country: "PL"};
+const cracow: City = {city: "Cracow", country: "PL"};
+
+// Dutch cities
+const amst: City = {city: "Amsterdam", country: "NL"};
+const rott: City = {city: "Rotterdam", country: "NL"};
+
+// Irish cities
+const dublin: City = {city: "Dublin", country: "IE"};
+const cork: City = {city: "Cork", country: "IE"};
+
+// Belgium
+const bruss: City = {city: "Brussels", country: "BE"};
 
 
-export const city_groups: string[] = ["Capitals", "US", "Austria", "France",
-    "England", "Germany", "Ireland", "Italy", "Netherlands", "Poland", "Portugal", "Spain"];
+
+
+
+
+
+export const city_groups: string[] = ["Capitals", "US", "Austria", "Belgium", "England", "France",
+    "Germany", "Ireland", "Italy", "Netherlands", "Poland", "Portugal", "Spain"];
 
 export const group_to_cities = new Map([
-    ["Capitals", [wash, paris]],
-    ["US", [newyork, wash]],
+    ["Capitals", [wash, paris, berlin, rome, bern, vienna, madrid, amst, warsaw]],
+    ["US", [newyork, wash, bost]],
     ["France", [paris, marseille, lyon, bordeaux,
         lille, strasbourg]],
+    ["Germany", [berlin, duss, koln, bonn, frank, hamb]],
+    ["Italy", [rome, milan, naples, flo, pal, siena, venice]],
+    ["Switzerland", [geneva, zurich, bern]],
+    ["Spain", [madrid, barcel]],
+    ["Austria", [vienna, inns, salz]],
+    ["Portugal", [lisbon]],
+    ["Poland", [warsaw, danzig, cracow]],
+    ["Netherlands", [amst, rott]],
+    ["England", [london, manchester, birmingham]],
+    ["Ireland", [dublin, cork]],
+    ["Belgium", [bruss]]
+
 ]);
 

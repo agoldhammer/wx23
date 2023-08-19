@@ -74,3 +74,7 @@ Lisbon
 
 Ambsterdam
 Rotterdam
+
+## Belgium
+
+Brussels
