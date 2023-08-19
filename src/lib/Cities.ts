@@ -96,3 +96,11 @@ export const group_to_cities = new Map([
 
 ]);
 
+export function group_to_city_list(city_group: string): City[] {
+    if (city_group === "None") {
+      city_group = "Capitals";
+    }
+    const city_list = group_to_cities.get(city_group);
+    return city_list ? city_list : [];
+  }
+

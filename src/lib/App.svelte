@@ -3,19 +3,12 @@
   import Wx from "./Wx.svelte";
   import { onMount } from "svelte";
   import type { City } from "./Cities";
-  import { city_groups, group_to_cities } from "./Cities";
+  import { city_groups, group_to_city_list } from "./Cities";
 
   let selected_city_group = "None";
   let wxdata: any;
   let showgraph: boolean = false;
 
-  function group_to_city_list(city_group: string): City[] {
-    if (city_group === "None") {
-      city_group = "Capitals";
-    }
-    const city_list = group_to_cities.get(city_group);
-    return city_list ? city_list : [];
-  }
   $: selected_cities = group_to_city_list(selected_city_group);
 
   async function selChange(selected_cities: City[]) {
