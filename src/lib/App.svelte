@@ -2,36 +2,25 @@
   import Header from "./Header.svelte";
   import Wx from "./Wx.svelte";
   import { onMount } from "svelte";
+  import type { City } from "./Cities";
+  import { city_groups, group_to_cities } from "./Cities";
 
   let selected_city_group = "None";
   let wxdata: any;
   let showgraph: boolean = false;
 
-  const city_groups: string[] = ["Capitals", "US", "France"];
-  type City = { city: string; country: string };
-  const paris: City = { city: "Paris", country: "FR" };
-  const newyork: City = { city: "New York", country: "US" };
-  const group_to_cities = new Map([
-    ["Capitals", [paris]],
-    ["US", [newyork]],
-    ["France", [paris]],
-  ]);
-
   function group_to_city_list(city_group: string): City[] {
-    // console.log("g2clist called with:", city_group, selected_cities);
     if (city_group === "None") {
       city_group = "Capitals";
     }
     const city_list = group_to_cities.get(city_group);
-    return city_list || [paris];
+    return city_list ? city_list : [];
   }
   $: selected_cities = group_to_city_list(selected_city_group);
 
   async function selChange(selected_cities: City[]) {
     let first_city = city_list_to_first_city(selected_cities);
     let data = await getCityData(first_city);
-    // console.log("onmount", first_city, data);
-    // console.log("showgraph", showgraph);
     return data;
   }
 
@@ -41,7 +30,6 @@
   });
 
   function city_list_to_first_city(city_list: City[]): any {
-    // console.log("WX first", city_list);
     if (city_list.length) {
       return city_list[0];
     } else {
@@ -51,7 +39,6 @@
 
   async function getCityData(city: City) {
     const parms = new URLSearchParams(city).toString();
-    // console.log("parms", parms);
     const response = await fetch(`/.netlify/functions/wxconn?${parms}`, {
       headers: { "Content-Type": "application/json" },
     });
@@ -60,7 +47,6 @@
   }
 
   async function resetCityData() {
-    // console.log("resetting city data", selected_city);
     wxdata = await getCityData(selected_city);
   }
 

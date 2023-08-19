@@ -1,4 +1,4 @@
-type City = { city: string; country: string };
+export type City = { city: string; country: string };
 
 // French cities
 const paris: City = { city: "Paris", country: "FR" };
@@ -19,12 +19,12 @@ const manchester: City = {city: "Manchester", country: "GB"};
 
 
 
-const city_groups: string[] = ["Capitals", "US", "Austria", "France",
+export const city_groups: string[] = ["Capitals", "US", "Austria", "France",
     "England", "Germany", "Ireland", "Italy", "Netherlands", "Poland", "Portugal", "Spain"];
 
-const group_to_cities = new Map([
+export const group_to_cities = new Map([
     ["Capitals", [wash, paris]],
-    ["US", [wash, newyork]],
+    ["US", [newyork, wash]],
     ["France", [paris, marseille, lyon, bordeaux,
         lille, strasbourg]],
 ]);
