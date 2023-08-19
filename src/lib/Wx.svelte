@@ -10,6 +10,7 @@
     datasets: [
       {
         label: "temps",
+        yAxisID: "L",
         fill: true,
         lineTension: 0.3,
         backgroundColor: "rgba(225, 204,230, .3)",
@@ -27,31 +28,30 @@
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        // data: [65, 59, 80, 81, 56, 55, 40],
         data: wxdata.temps,
       } as ChartDataset<"line", number[]>,
-      // {
-      //   label: "mintemps",
-      //   fill: true,
-      //   lineTension: 0.3,
-      //   backgroundColor: "rgba(184, 185, 210, .3)",
-      //   borderColor: "rgb(35, 26, 136)",
-      //   borderCapStyle: "butt",
-      //   borderDash: [],
-      //   borderDashOffset: 0.0,
-      //   borderJoinStyle: "miter",
-      //   pointBorderColor: "rgb(35, 26, 136)",
-      //   pointBackgroundColor: "rgb(255, 255, 255)",
-      //   pointBorderWidth: 10,
-      //   pointHoverRadius: 5,
-      //   pointHoverBackgroundColor: "rgb(0, 0, 0)",
-      //   pointHoverBorderColor: "rgba(220, 220, 220, 1)",
-      //   pointHoverBorderWidth: 2,
-      //   pointRadius: 1,
-      //   pointHitRadius: 10,
-      //   // data: [28, 48, 40, 19, 86, 27, 90],
-      //   data: wxdata.mintemps,
-      // } as ChartDataset<"line">,
+      {
+        label: "pressures",
+        yAxisID: "R",
+        fill: true,
+        lineTension: 0.3,
+        backgroundColor: "rgba(184, 185, 210, .3)",
+        borderColor: "rgb(35, 26, 136)",
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: "rgb(35, 26, 136)",
+        pointBackgroundColor: "rgb(255, 228, 181)",
+        pointBorderWidth: 10,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: "rgb(255, 255, 0)",
+        pointHoverBorderColor: "rgba(220, 220, 220, 1)",
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: wxdata.pressures,
+      } as ChartDataset<"line", number[]>,
     ],
   };
 </script>
@@ -62,6 +62,21 @@
     options={{
       responsive: true,
       maintainAspectRatio: false,
+      scales: {
+        L: {
+          type: "linear",
+          display: true,
+          position: "left",
+        },
+        R: {
+          type: "linear",
+          display: true,
+          position: "right",
+          grid: {
+            drawOnChartArea: false,
+          },
+        },
+      },
       plugins: {
         title: { display: true, text: `${wxdata.city}, ${wxdata.country}` },
       },
@@ -69,22 +84,11 @@
   />
 </div>
 
-<!-- <div class="city">
-  <Line
-    data={dataLine}
-    options={{
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        title: { display: true, text: `${wxdata.city}, ${wxdata.country}` },
-      },
-    }}
-  />
-</div> -->
-
 <style>
   .city {
     height: 400px;
-    /* overflow-y: auto; */
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
   }
 </style>
