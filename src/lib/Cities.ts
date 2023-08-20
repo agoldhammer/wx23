@@ -68,16 +68,10 @@ const cork: City = {city: "Cork", country: "IE"};
 // Belgium
 const bruss: City = {city: "Brussels", country: "BE"};
 
-
-
-
-
-
-
 export const city_groups: string[] = ["Capitals", "US", "Austria", "Belgium", "England", "France",
     "Germany", "Ireland", "Italy", "Netherlands", "Poland", "Portugal", "Spain"];
 
-export const group_to_cities = new Map([
+const group_to_cities = new Map([
     ["Capitals", [wash, paris, berlin, rome, bern, vienna, madrid, amst, warsaw]],
     ["US", [newyork, wash, bost]],
     ["France", [paris, marseille, lyon, bordeaux,
@@ -96,11 +90,18 @@ export const group_to_cities = new Map([
 
 ]);
 
+// const group_to_cities = new Map([["Capitals", [barcel, dublin]]]);
+
 export function group_to_city_list(city_group: string): City[] {
     if (city_group === "None") {
       city_group = "Capitals";
     }
+    console.log("group to city list", city_group)
     const city_list = group_to_cities.get(city_group);
-    return city_list ? city_list : [];
+    console.log("g2cl get", city_list);
+    if (city_list === undefined) {
+        throw new Error("bad city_group param");
+    }
+    return city_list;
   }
 
