@@ -88,6 +88,7 @@
     border: 2px solid blue;
     border-radius: 10px;
     height: 98svh;
+    width: 100svw;
     background-color: rgb(220, 225, 230);
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 8fr;

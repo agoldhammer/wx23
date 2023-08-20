@@ -78,3 +78,14 @@ Rotterdam
 ## Belgium
 
 Brussels
+
+## time series
+
+// x: {
+// type: "timeseries",
+// time: {
+// displayFormats: {
+// day: "DD HH:mm",
+// },
+// },
+// },

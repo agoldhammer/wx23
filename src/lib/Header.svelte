@@ -15,8 +15,11 @@
 
 <style>
   .wxheader {
+    width: 80%;
+    margin: auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 4px;
     border: 2px solid red;

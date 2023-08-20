@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Line } from "svelte-chartjs";
   import { Chart } from "chart.js/auto";
+  import "chartjs-adapter-date-fns";
   import type { ChartData, ChartDataset } from "chart.js";
   export let wxdata: any;
 
@@ -63,6 +64,17 @@
       responsive: true,
       maintainAspectRatio: false,
       scales: {
+        x: {
+          type: "timeseries",
+          ticks: { source: "labels" },
+          time: {
+            tooltipFormat: "MM-dd @ HH:mm",
+            unit: "day",
+            displayFormats: {
+              day: "MM-dd HH:mm",
+            },
+          },
+        },
         L: {
           type: "linear",
           display: true,
@@ -92,6 +104,8 @@
 <style>
   .city {
     height: 400px;
+    width: 75%;
+    margin: auto;
     padding: 20px;
     border: 2px solid gray;
     border-radius: 10px;
