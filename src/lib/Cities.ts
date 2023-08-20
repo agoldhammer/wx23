@@ -55,7 +55,7 @@ const lisbon: City = {city: "Lisbon", country: "PT"};
 // Polish cities
 const warsaw: City = {city: "Warsaw", country: "PL"};
 const danzig: City = {city: "Danzig", country: "PL"};
-const cracow: City = {city: "Cracow", country: "PL"};
+const krakow: City = {city: "Krakow", country: "PL"};
 
 // Dutch cities
 const amst: City = {city: "Amsterdam", country: "NL"};
@@ -82,7 +82,7 @@ const group_to_cities = new Map([
     ["Spain", [madrid, barcel]],
     ["Austria", [vienna, inns, salz]],
     ["Portugal", [lisbon]],
-    ["Poland", [warsaw, danzig, cracow]],
+    ["Poland", [warsaw, danzig, krakow]],
     ["Netherlands", [amst, rott]],
     ["England", [london, manchester, birmingham]],
     ["Ireland", [dublin, cork]],
@@ -96,9 +96,9 @@ export function group_to_city_list(city_group: string): City[] {
     if (city_group === "None") {
       city_group = "Capitals";
     }
-    console.log("group to city list", city_group)
+    // console.log("group to city list", city_group)
     const city_list = group_to_cities.get(city_group);
-    console.log("g2cl get", city_list);
+    // console.log("g2cl get", city_list);
     if (city_list === undefined) {
         throw new Error("bad city_group param");
     }
