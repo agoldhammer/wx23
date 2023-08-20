@@ -22,10 +22,19 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 4px;
-    border: 2px solid red;
+    /* justify-content: space-between; */
+    border: 2px solid gray;
   }
 
+  button {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
   button:first-of-type {
     margin-left: 8px;
+  }
+
+  button:last-of-type {
+    margin-right: 8px;
   }
 </style>

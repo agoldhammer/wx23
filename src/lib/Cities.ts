@@ -68,8 +68,8 @@ const cork: City = {city: "Cork", country: "IE"};
 // Belgium
 const bruss: City = {city: "Brussels", country: "BE"};
 
-export const city_groups: string[] = ["Capitals", "US", "Austria", "Belgium", "England", "France",
-    "Germany", "Ireland", "Italy", "Netherlands", "Poland", "Portugal", "Spain"];
+export const city_groups: string[] = ["Capitals", "US", "Austria", "Benelux", "England", "France",
+    "Germany", "Iberia", "Ireland", "Italy", "Poland"];
 
 const group_to_cities = new Map([
     ["Capitals", [wash, paris, berlin, rome, bern, vienna, madrid, amst, warsaw]],
@@ -78,15 +78,13 @@ const group_to_cities = new Map([
         lille, strasbourg]],
     ["Germany", [berlin, duss, koln, bonn, frank, hamb]],
     ["Italy", [rome, milan, naples, flo, pal, siena, venice]],
-    ["Switzerland", [geneva, zurich, bern]],
-    ["Spain", [madrid, barcel]],
-    ["Austria", [vienna, inns, salz]],
-    ["Portugal", [lisbon]],
-    ["Poland", [warsaw, danzig, krakow]],
-    ["Netherlands", [amst, rott]],
+    ["Iberia", [madrid, barcel, lisbon]],
     ["England", [london, manchester, birmingham]],
+    ["Benelux", [bruss, amst]],
+    ["Austria", [vienna, inns, salz]],
+    ["Switzerland", [geneva, zurich, bern]],
+    ["Poland", [warsaw, danzig, krakow]],
     ["Ireland", [dublin, cork]],
-    ["Belgium", [bruss]]
 
 ]);
 
