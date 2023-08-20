@@ -2,7 +2,9 @@
   import Header from "./Header.svelte";
   import Wx from "./Wx.svelte";
   import { onMount } from "svelte";
+  // @ts-ignore
   import type { City } from "./Cities";
+  // @ts-ignore
   import { city_groups, group_to_city_list } from "./Cities";
 
   let selected_city_group = "Capitals";

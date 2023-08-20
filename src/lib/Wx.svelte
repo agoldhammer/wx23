@@ -103,10 +103,12 @@
 
 <style>
   .city {
-    width: 80%;
+    width: 80svw;
     /* --width: calc(100% / 3); */
     /* height: var(--width); */
     height: 300px;
+    /* --width: 80svw; */
+    /* height: calc(var(--width) / 3); */
     margin: auto;
     padding: 20px;
     border: 2px solid gray;
