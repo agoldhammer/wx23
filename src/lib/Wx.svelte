@@ -106,7 +106,7 @@
     /* width: 80svw; */
     /* --width: calc(100% / 3); */
     /* height: var(--width); */
-    width: minmax(90svw, 2000px);
+    min-width: 1200px;
     height: 300px;
     /* --width: 80svw; */
     /* height: calc(var(--width) / 3); */
