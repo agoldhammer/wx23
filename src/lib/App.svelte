@@ -89,8 +89,8 @@
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    height: 98svh;
-    width: 100svw;
+    height: 98lvh;
+    width: 98svw;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
     grid-template-columns: 1fr;
