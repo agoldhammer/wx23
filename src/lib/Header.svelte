@@ -15,7 +15,7 @@
 
 <style>
   .wxheader {
-    width: 80%;
+    width: 95%;
     margin: auto;
     display: flex;
     flex-direction: row;

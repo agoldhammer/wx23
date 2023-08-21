@@ -103,9 +103,10 @@
 
 <style>
   .city {
-    width: 80svw;
+    /* width: 80svw; */
     /* --width: calc(100% / 3); */
     /* height: var(--width); */
+    width: minmax(90svw, 2000px);
     height: 300px;
     /* --width: 80svw; */
     /* height: calc(var(--width) / 3); */
@@ -113,5 +114,6 @@
     padding: 20px;
     border: 2px solid gray;
     border-radius: 10px;
+    overflow-x: auto;
   }
 </style>
