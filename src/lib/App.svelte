@@ -1,7 +1,8 @@
 <script lang="ts">
   import Header from "./Header.svelte";
   import Wx from "./Wx.svelte";
-  import { onMount } from "svelte";
+  import Local from "./Local.svelte";
+  import { hasContext, onMount } from "svelte";
   // @ts-ignore
   import type { City } from "./Cities";
   // @ts-ignore
@@ -15,15 +16,10 @@
   $: selected_cities = group_to_city_list(selected_city_group);
 
   onMount(async () => {
-    // fetchGroupData(selected_cities);
-    // selected_city_group = "Capitals";
-    // console.log("onmount", selected_city_group, selected_cities);
-    fetchGroupData(selected_cities);
-    // console.log("onmount2", groupdata);
-    showgraph = true;
+    groupdata = [];
+    showgraph = false;
   });
 
-  //  this should replace getCityData for group fetch
   async function fetchCityData(city: City) {
     const parms = new URLSearchParams(city).toString();
     const response = fetch(`/.netlify/functions/wxconn?${parms}`, {
@@ -33,33 +29,28 @@
   }
 
   function setGroupData(wxvals: any) {
-    // console.log("setgroupdata: wxvals", wxvals);
     groupdata = wxvals;
     showgraph = true;
   }
 
   async function fetchGroupData(city_list: City[]) {
-    // console.log("fgd sel cities", city_list);
+    showgraph = true;
+    groupdata = [];
     const responses = city_list.map(fetchCityData);
-    showgraph = false;
     Promise.all(responses)
       .then((responses) =>
         Promise.all(responses.map((response) => response.json()))
       )
       .then((wxvals) => {
-        // console.log("fgd", wxvals);
         setGroupData(wxvals);
       });
-    // .then((values) => console.log("fetchgroupdata", values));
   }
 
   async function resetGroupData(selected_cities: City[]) {
-    // console.log("rgd sel cities", selected_cities);
     fetchGroupData(selected_cities);
   }
 
   function onGroupChange(node: any, selected_cities: any) {
-    // console.log("ongroupchange", selected_cities);
     return {
       update(selected_cities: any) {
         resetGroupData(selected_cities);
@@ -70,16 +61,22 @@
 
 <div use:onGroupChange={selected_cities} class="wrapper">
   <Header bind:selected_city_group {city_groups} />
-  <div class="graphs">
-    {#if showgraph}
+  {#if !showgraph}
+    <Local />
+  {:else if groupdata.length !== 0}
+    <div class="graphs">
       {#key groupdata}
         {#each groupdata as wxdata}
           <Wx {wxdata} />
           <hr class="rule" />
         {/each}
       {/key}
-    {/if}
-  </div>
+    </div>
+  {:else}
+    <div>
+      <h1>Loading ...</h1>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -90,7 +87,7 @@
     border: 2px solid blue;
     border-radius: 10px;
     height: 98lvh;
-    width: 98svw;
+    min-width: 1200px;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
     grid-template-columns: 1fr;
@@ -107,7 +104,7 @@
   }
 
   .rule {
-    width: 50%;
+    width: 80%;
     height: 2px;
     color: gray;
   }
