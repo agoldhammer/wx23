@@ -2,31 +2,32 @@
   export let local_wx_data: any;
 </script>
 
-<div class="opener">
-  <div class="locwxctr">
-    <div class="imgctr">
-      <img src="/images/mit.jpg" alt="MIT 77 Mass. Ave." />
-    </div>
-    {#if local_wx_data}
-      <div class="wx">
-        <p>Cambridge, MA</p>
-
-        <p>Temp: {local_wx_data.main.temp}</p>
-        <p>Feels like: {local_wx_data.main.feels_like}</p>
-        <p>Min temp: {local_wx_data.main.temp_min}</p>
-        <p>Max temp: {local_wx_data.main.temp_max}</p>
-        <p>Pressure: {local_wx_data.main.pressure}</p>
-        <p>Wind: {local_wx_data.wind.speed} Dir: {local_wx_data.wind.deg}</p>
-        {#if local_wx_data.wind.gust}
-          <p>Gust: {local_wx_data.wind.gust}</p>
-        {/if}
-        <p>Weather: {local_wx_data.weather[0].main}</p>
-        <p>Weather: {local_wx_data.weather[0].description}</p>
-      </div>
-    {/if}
-    <div class="metar">metar</div>
+<!-- <div class="opener"> -->
+<div id="locdata" class="locwxctr">
+  <div class="imgctr">
+    <img src="/images/mit.jpg" alt="MIT 77 Mass. Ave." />
   </div>
+  {#if local_wx_data}
+    <div class="wx">
+      <p>Cambridge, MA</p>
+
+      <p>Temp: {local_wx_data.main.temp}</p>
+      <p>Feels like: {local_wx_data.main.feels_like}</p>
+      <p>Min temp: {local_wx_data.main.temp_min}</p>
+      <p>Max temp: {local_wx_data.main.temp_max}</p>
+      <p>Pressure: {local_wx_data.main.pressure}</p>
+      <p>Wind: {local_wx_data.wind.speed} Dir: {local_wx_data.wind.deg}</p>
+      {#if local_wx_data.wind.gust}
+        <p>Gust: {local_wx_data.wind.gust}</p>
+      {/if}
+      <p>Weather: {local_wx_data.weather[0].main}</p>
+      <p>Weather: {local_wx_data.weather[0].description}</p>
+    </div>
+  {/if}
+  <div class="metar">metar</div>
 </div>
+
+<!-- </div> -->
 
 <style>
   .locwxctr {
@@ -37,7 +38,7 @@
       "img wx metar"
       "img wx metar"
       "img wx metar";
-    height: 600px;
+    height: lvh;
     background-color: dodgerblue;
     color: white;
     text-align: left;

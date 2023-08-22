@@ -65,30 +65,34 @@
 </script>
 
 <div use:onGroupChange={selected_cities} class="wrapper">
-  <Header bind:selected_city_group {city_groups} />
-  {#if !showgraph}
-    {#await local_promise}
-      <p>waiting ....</p>
-    {:then local_wx_data}
-      <Local {local_wx_data} />
-    {:catch error}
-      <p>{error.message}</p>
-    {/await}
-  {:else if groupdata.length !== 0}
-    <div class="graphs">
+  <div class="wxheader">
+    <Header bind:selected_city_group {city_groups} />
+  </div>
+  <div class="graphs">
+    {#if !showgraph}
+      {#await local_promise}
+        <p>waiting ....</p>
+      {:then local_wx_data}
+        <Local {local_wx_data} />
+      {:catch error}
+        <p>{error.message}</p>
+      {/await}
+    {:else if groupdata.length !== 0}
+      <!-- <div class="graphs"> -->
       {#key groupdata}
         {#each groupdata as wxdata}
           <Wx {wxdata} />
           <hr class="rule" />
         {/each}
       {/key}
-    </div>
-  {:else}
-    <div>
-      <!-- <h1>Loading ...</h1> -->
-      <div class="loader">Loading ...</div>
-    </div>
-  {/if}
+      <!-- </div> -->
+    {:else}
+      <div>
+        <!-- <h1>Loading ...</h1> -->
+        <div class="loader">Loading ...</div>
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style>
@@ -98,16 +102,30 @@
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    height: 98lvh;
+    height: 100%;
     min-width: 1200px;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 60px 1fr;
     gap: 0.3em;
     grid-template-areas:
       "hdr"
       "wxcontent";
+  }
+
+  .wxheader {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    justify-content: space-evenly;
+    border: 2px solid gray;
+    border-radius: 10px;
   }
 
   .graphs {

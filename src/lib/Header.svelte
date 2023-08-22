@@ -7,29 +7,23 @@
   }
 </script>
 
-<div class="wxheader">
-  {#each city_groups as city_group}
-    <button id={city_group} on:click={process}>{city_group}</button>
-  {/each}
-</div>
+<!-- <div class="wxheader"> -->
+{#each city_groups as city_group}
+  <button id={city_group} on:click={process}>{city_group}</button>
+{/each}
+
+<!-- </div> -->
 
 <style>
-  .wxheader {
-    width: 95%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 4px;
-    /* justify-content: space-between; */
-    border: 2px solid gray;
+  button {
+    font-size: x-large;
+    margin-top: 4px;
+    margin-bottom: 4px;
     border-radius: 10px;
   }
 
-  button {
-    margin-top: 4px;
-    margin-bottom: 4px;
+  button:hover {
+    background-color: lightgoldenrodyellow;
   }
   button:first-of-type {
     margin-left: 8px;
