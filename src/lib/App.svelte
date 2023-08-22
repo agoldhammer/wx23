@@ -12,6 +12,7 @@
   // let wxdata: any;
   let groupdata: any[] = [];
   let showgraph: boolean = false;
+  let local_promise: Promise<any>;
 
   $: selected_cities = group_to_city_list(selected_city_group);
 
@@ -21,8 +22,7 @@
     const response = await fetch("/.netlify/functions/local", {
       headers: { "Content-Type": "application/json" },
     });
-    const local_wx = await response.json();
-    console.log(local_wx);
+    local_promise = response.json();
   });
 
   async function fetchCityData(city: City) {
@@ -67,7 +67,13 @@
 <div use:onGroupChange={selected_cities} class="wrapper">
   <Header bind:selected_city_group {city_groups} />
   {#if !showgraph}
-    <Local />
+    {#await local_promise}
+      <p>waiting ....</p>
+    {:then local_wx_data}
+      <Local {local_wx_data} />
+    {:catch error}
+      <p>{error.message}</p>
+    {/await}
   {:else if groupdata.length !== 0}
     <div class="graphs">
       {#key groupdata}
