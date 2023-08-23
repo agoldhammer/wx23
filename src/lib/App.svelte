@@ -98,8 +98,8 @@
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    max-height: 100svh;
-    min-width: 1200px;
+    max-height: 100%;
+    min-width: 1600px;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
     grid-template-columns: 1fr;
@@ -130,6 +130,7 @@
   .graphs {
     margin: 2px;
     border: red;
+    height: 99%;
     grid-area: "wxcontent";
     overflow-y: auto;
   }
