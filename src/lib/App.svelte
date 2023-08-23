@@ -78,17 +78,14 @@
         <p>{error.message}</p>
       {/await}
     {:else if groupdata.length !== 0}
-      <!-- <div class="graphs"> -->
       {#key groupdata}
         {#each groupdata as wxdata}
           <Wx {wxdata} />
           <hr class="rule" />
         {/each}
       {/key}
-      <!-- </div> -->
     {:else}
       <div>
-        <!-- <h1>Loading ...</h1> -->
         <div class="loader">Loading ...</div>
       </div>
     {/if}
@@ -102,7 +99,7 @@
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    height: 100%;
+    height: 100svh;
     min-width: 1200px;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
@@ -129,8 +126,9 @@
   }
 
   .graphs {
+    border: red;
     grid-area: "wxcontent";
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .rule {
