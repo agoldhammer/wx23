@@ -5,8 +5,19 @@ exports.handler = async event => {
   let country = event.queryStringParameters.country;
   // console.log ('citycoun', city, country);
 
+  function checkStatus (response) {
+    if (response.status >= 200 && response.status < 300) {
+      return response;
+    } else {
+      let error = new Error (response.statusText);
+      error.response = response;
+      throw error;
+    }
+  }
+
   const geoapi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}%2C${country}&limit=1&appid=${appid}`;
   let response = await fetch (geoapi, {method: 'GET'});
+  response = checkStatus (response);
   if (!response.ok) {
     throw new Error (response.statusText);
   }
@@ -19,6 +30,7 @@ exports.handler = async event => {
   const wxapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appid}&units=imperial`;
   // console.log ('wxapi', wxapi);
   let wxresponse = await fetch (wxapi, {method: 'GET'});
+  wxresponse = checkStatus (wxresponse);
   if (!wxresponse.ok) {
     throw new Error (wxresponse.statusText);
   }

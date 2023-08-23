@@ -107,7 +107,7 @@
     /* --width: calc(100% / 3); */
     /* height: var(--width); */
     min-width: 1200px;
-    height: 300px;
+    height: 500px;
     /* --width: 80svw; */
     /* height: calc(var(--width) / 3); */
     margin: auto;

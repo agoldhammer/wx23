@@ -3,7 +3,7 @@
   import Wx from "./Wx.svelte";
   import Local from "./Local.svelte";
   import Spinner from "./Spinner.svelte";
-  import { hasContext, onMount } from "svelte";
+  import { onMount } from "svelte";
   // @ts-ignore
   import type { City } from "./Cities";
   // @ts-ignore
@@ -17,6 +17,11 @@
   $: selected_cities = group_to_city_list(selected_city_group);
 
   onMount(async () => {
+    let metar = await fetch("/.netlify/functions/metar", {
+      headers: { "Content-Type": "application/json" },
+    });
+    const metarx: any[] = await metar.json();
+    console.log("metarx", metarx[0].rawOb);
     groupdata = [];
     showgraph = false;
     const response = await fetch("/.netlify/functions/local", {
@@ -79,18 +84,20 @@
         <p>{error.message}</p>
       {/await}
     {:else if groupdata.length !== 0}
-      {#key groupdata}
-        {#each groupdata as wxdata}
+      <!-- {#key groupdata} -->
+      {#each groupdata as wxdata}
+        <div class="wx-inner">
           <Wx {wxdata} />
           <hr class="rule" />
-        {/each}
-      {/key}
+        </div>
+      {/each}
+      <!-- {/key} -->
     {:else}
       <Spinner />
     {/if}
   </div>
   <div class="footer">
-    <p>footer</p>
+    <!-- <p>footer</p> -->
   </div>
 </div>
 
@@ -145,6 +152,6 @@
   }
 
   .footer {
-    background-color: yellowgreen;
+    background-color: salmon;
   }
 </style>
