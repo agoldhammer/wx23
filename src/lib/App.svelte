@@ -98,13 +98,14 @@
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    height: inherit;
+    max-height: 100svh;
     min-width: 1200px;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
     grid-template-columns: 1fr;
     grid-template-rows: 60px 1fr;
     gap: 0.3em;
+    overflow-y: hidden;
     grid-template-areas:
       "hdr"
       "wxcontent";
@@ -127,6 +128,7 @@
   }
 
   .graphs {
+    margin: 2px;
     border: red;
     grid-area: "wxcontent";
     overflow-y: auto;

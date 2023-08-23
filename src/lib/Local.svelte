@@ -36,6 +36,7 @@
 
   .locwxctr {
     display: grid;
+    height: inherit;
     grid-template-columns: 180px repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
