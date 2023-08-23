@@ -89,26 +89,29 @@
       </div>
     {/if}
   </div>
+  <div class="footer">
+    <p>footer</p>
+  </div>
 </div>
 
 <style>
   .wrapper {
     display: grid;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    max-height: 100%;
+    /* max-height: 100%; */
     min-width: 1600px;
-    /* background-color: rgb(220, 225, 230); */
     background-color: white;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 60px 12fr 30px;
     gap: 0.3em;
     overflow-y: hidden;
     grid-template-areas:
       "hdr"
-      "wxcontent";
+      "wxcontent"
+      "footer";
   }
 
   .wxheader {
@@ -139,6 +142,10 @@
     width: 80%;
     height: 2px;
     color: gray;
+  }
+
+  .footer {
+    background-color: yellowgreen;
   }
 
   .loader {

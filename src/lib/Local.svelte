@@ -19,7 +19,7 @@
       {#if local_wx_data.wind.gust}
         <p>Gust: {local_wx_data.wind.gust}</p>
       {/if}
-      <p>Weather: {local_wx_data.weather[0].main}</p>
+      <p>Visibility: {local_wx_data.visibility}</p>
       <p>Weather: {local_wx_data.weather[0].description}</p>
     </div>
   {/if}
@@ -44,7 +44,7 @@
       "img wx metar"
       "img wx metar";
     column-gap: 3em;
-    background-color: dodgerblue;
+    background-color: darkslategray;
     color: white;
     text-align: left;
     margin: 10px;
