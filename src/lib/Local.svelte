@@ -5,12 +5,11 @@
 <!-- <div class="opener"> -->
 <div id="locdata" class="locwxctr">
   <div class="imgctr">
-    <img src="/images/mit.jpg" alt="MIT 77 Mass. Ave." />
+    <img id="logo" src="/images/mit.jpg" alt="MIT 77 Mass. Ave." />
   </div>
   {#if local_wx_data}
     <div class="wx">
       <p>Cambridge, MA</p>
-
       <p>Temp: {local_wx_data.main.temp}</p>
       <p>Feels like: {local_wx_data.main.feels_like}</p>
       <p>Min temp: {local_wx_data.main.temp_min}</p>
@@ -30,6 +29,11 @@
 <!-- </div> -->
 
 <style>
+  #logo {
+    height: 200px;
+    width: 200px;
+  }
+
   .locwxctr {
     display: grid;
     grid-template-columns: 180px repeat(2, 1fr);
@@ -38,7 +42,7 @@
       "img wx metar"
       "img wx metar"
       "img wx metar";
-    height: lvh;
+    column-gap: 3em;
     background-color: dodgerblue;
     color: white;
     text-align: left;
@@ -49,6 +53,8 @@
   .imgctr {
     /* background-color: yellow; */
     grid-area: img;
+    display: flex;
+    align-self: start;
   }
 
   .wx {

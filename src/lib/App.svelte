@@ -9,7 +9,6 @@
   import { city_groups, group_to_city_list } from "./Cities";
 
   let selected_city_group = "Capitals";
-  // let wxdata: any;
   let groupdata: any[] = [];
   let showgraph: boolean = false;
   let local_promise: Promise<any>;
@@ -99,7 +98,7 @@
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    height: 100svh;
+    height: inherit;
     min-width: 1200px;
     /* background-color: rgb(220, 225, 230); */
     background-color: white;
@@ -113,6 +112,7 @@
 
   .wxheader {
     width: 95%;
+    background-color: linen;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -123,6 +123,7 @@
     justify-content: space-evenly;
     border: 2px solid gray;
     border-radius: 10px;
+    grid-area: hdr;
   }
 
   .graphs {

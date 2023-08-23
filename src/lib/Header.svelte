@@ -21,9 +21,10 @@
     margin-bottom: 4px;
     border-radius: 10px;
   }
-
-  button:hover {
-    background-color: lightgoldenrodyellow;
+  @media (hover: hover) {
+    button:hover {
+      background-color: lightgoldenrodyellow;
+    }
   }
   button:first-of-type {
     margin-left: 8px;
