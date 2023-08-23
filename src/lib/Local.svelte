@@ -45,6 +45,8 @@
       "img wx metar";
     column-gap: 3em;
     background-color: darkslategray;
+    border: 4px solid darkgray;
+    border-radius: 10px;
     color: white;
     text-align: left;
     margin: 10px;
