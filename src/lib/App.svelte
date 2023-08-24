@@ -107,7 +107,6 @@
     width: 100svw;
     background-color: white;
     grid-template-columns: 1fr;
-    /* grid-template-rows: 60px 12fr 30px; */
     grid-template-rows: 2fr 18fr 1fr;
     gap: 0.3em;
     overflow-y: hidden;
