@@ -9,7 +9,7 @@
   // @ts-ignore
   import { city_groups, group_to_city_list } from "./Cities";
 
-  let selected_city_group = "Capitals";
+  let selected_city_group = "";
   let groupdata: any[] = [];
   let showgraph: boolean = false;
   let local_promise: Promise<any>;
@@ -17,11 +17,6 @@
   $: selected_cities = group_to_city_list(selected_city_group);
 
   onMount(async () => {
-    let metar = await fetch("/.netlify/functions/metar", {
-      headers: { "Content-Type": "application/json" },
-    });
-    const metarx: any[] = await metar.json();
-    console.log("metarx", metarx[0].rawOb);
     groupdata = [];
     showgraph = false;
     const response = await fetch("/.netlify/functions/local", {
@@ -104,15 +99,15 @@
 <style>
   .wrapper {
     display: grid;
-    /* margin: 0 auto; */
+    height: 100svh;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    /* max-height: 100%; */
     min-width: 1600px;
     background-color: white;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px 12fr 30px;
+    /* grid-template-rows: 60px 12fr 30px; */
+    grid-template-rows: 10% 85% 5%;
     gap: 0.3em;
     overflow-y: hidden;
     grid-template-areas:
@@ -140,8 +135,7 @@
   .graphs {
     margin: 2px;
     border: red;
-    min-height: 100%;
-    grid-area: "wxcontent";
+    grid-area: wxcontent;
     overflow-y: auto;
   }
 
@@ -153,5 +147,6 @@
 
   .footer {
     background-color: salmon;
+    grid-area: footer;
   }
 </style>

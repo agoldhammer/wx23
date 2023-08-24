@@ -103,14 +103,7 @@ const group_to_cities = new Map([
 // const group_to_cities = new Map([["Capitals", [barcel, dublin]]]);
 
 export function group_to_city_list(city_group: string): City[] {
-  if (city_group === "None") {
-    city_group = "Capitals";
-  }
-  // console.log("group to city list", city_group)
   const city_list = group_to_cities.get(city_group);
-  // console.log("g2cl get", city_list);
-  if (city_list === undefined) {
-    throw new Error("bad city_group param");
-  }
-  return city_list;
+
+  return city_list ?? [{ city: "n/a", country: "n/a" }];
 }

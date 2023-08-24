@@ -1,5 +1,7 @@
 <script lang="ts">
+  import Metar from "./Metar.svelte";
   export let local_wx_data: any;
+  const icaos = ["KBOS", "KBED", "KOWD", "KORH", "KMHT"];
 </script>
 
 <!-- <div class="opener"> -->
@@ -23,7 +25,11 @@
       <p>Weather: {local_wx_data.weather[0].description}</p>
     </div>
   {/if}
-  <div class="metar">metar</div>
+  <div class="metar">
+    {#each icaos as icao}
+      <Metar {icao} />
+    {/each}
+  </div>
 </div>
 
 <!-- </div> -->
@@ -61,12 +67,17 @@
   }
 
   .wx {
+    grid-area: wx;
     padding: 20px;
     display: flex;
     flex-direction: column;
   }
 
   .metar {
+    grid-area: metar;
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
     padding: 20px;
   }
 </style>
