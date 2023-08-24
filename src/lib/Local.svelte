@@ -37,12 +37,12 @@
 <style>
   #logo {
     height: 200px;
-    width: 200px;
+    width: 180px;
   }
 
   .locwxctr {
     display: grid;
-    height: 1200px;
+    min-height: 5000px;
     grid-template-columns: 180px repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
@@ -54,7 +54,7 @@
     border: 4px solid darkgray;
     border-radius: 10px;
     color: white;
-    text-align: left;
+    /* text-align: left; */
     margin: 10px;
     padding: 20px;
   }
@@ -63,13 +63,16 @@
     /* background-color: yellow; */
     grid-area: img;
     display: flex;
-    align-self: start;
+    background-color: white;
+    align-self: stretch;
+    border: 2px solid red;
   }
 
   .wx {
     grid-area: wx;
     padding: 20px;
     display: flex;
+    align-self: stretch;
     flex-direction: column;
   }
 
@@ -78,6 +81,8 @@
     display: flex;
     flex-direction: column;
     margin: 4px;
+    align-self: stretch;
     padding: 20px;
+    background-color: lightpink;
   }
 </style>

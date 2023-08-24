@@ -98,16 +98,17 @@
 
 <style>
   .wrapper {
+    margin: 0 auto;
     display: grid;
     height: 100svh;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    min-width: 1600px;
+    width: 100svw;
     background-color: white;
     grid-template-columns: 1fr;
     /* grid-template-rows: 60px 12fr 30px; */
-    grid-template-rows: 10% 85% 5%;
+    grid-template-rows: 2fr 18fr 1fr;
     gap: 0.3em;
     overflow-y: hidden;
     grid-template-areas:
