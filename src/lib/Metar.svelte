@@ -19,12 +19,12 @@
   });
 </script>
 
-<div class="metar">
+<div class="metard">
   <p>{metar_decoded}</p>
 </div>
 
 <style>
-  .metar p {
+  .metard p {
     background-color: black;
   }
 </style>
