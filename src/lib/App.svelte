@@ -101,7 +101,7 @@
     margin: 0 auto;
     display: grid;
     height: 100svh;
-    width: 100svw;
+    width: 98svw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
