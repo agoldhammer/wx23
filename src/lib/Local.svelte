@@ -6,9 +6,6 @@
 
 <!-- <div class="opener"> -->
 <div id="locdata" class="locwxctr">
-  <div class="imgctr">
-    <img id="logo" src="/images/mit.jpg" alt="MIT 77 Mass. Ave." />
-  </div>
   {#if local_wx_data}
     <div class="wx">
       <p>Cambridge, MA</p>
@@ -35,42 +32,27 @@
 <!-- </div> -->
 
 <style>
-  #logo {
-    height: 200px;
-    width: 180px;
-  }
-
   .locwxctr {
     display: grid;
-    min-height: 5000px;
-    grid-template-columns: 180px repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      "img wx metar"
-      "img wx metar"
-      "img wx metar";
+      "wx metar"
+      "wx metar"
+      "wx metar";
     column-gap: 3em;
-    background-color: darkslategray;
+    background-image: linear-gradient(to right, sienna, goldenrod);
     border: 4px solid darkgray;
     border-radius: 10px;
     color: white;
     /* text-align: left; */
-    margin: 10px;
+    margin: 0px;
     padding: 20px;
-  }
-
-  .imgctr {
-    /* background-color: yellow; */
-    grid-area: img;
-    display: flex;
-    background-color: white;
-    align-self: stretch;
-    border: 2px solid red;
   }
 
   .wx {
     grid-area: wx;
-    padding: 20px;
+    padding: 5px;
     display: flex;
     align-self: stretch;
     flex-direction: column;
@@ -83,6 +65,5 @@
     margin: 4px;
     align-self: stretch;
     padding: 20px;
-    background-color: lightpink;
   }
 </style>

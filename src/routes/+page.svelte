@@ -4,4 +4,7 @@
   import App from "$lib/App.svelte";
 </script>
 
+<svelte:head>
+  <title>Cosmic Weather App</title>
+</svelte:head>
 <App />

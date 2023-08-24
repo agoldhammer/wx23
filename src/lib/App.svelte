@@ -101,6 +101,7 @@
     margin: 0 auto;
     display: grid;
     height: 100svh;
+    width: 100svw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
@@ -133,7 +134,7 @@
   }
 
   .graphs {
-    margin: 2px;
+    margin: 1em;
     border: red;
     grid-area: wxcontent;
     overflow-y: auto;
@@ -146,7 +147,7 @@
   }
 
   .footer {
-    background-color: salmon;
+    background-image: linear-gradient(to right, sienna, goldenrod);
     grid-area: footer;
   }
 </style>

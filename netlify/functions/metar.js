@@ -7,7 +7,7 @@ exports.handler = async event => {
 
   let metar = await response.json ();
 
-  console.log ('metar', metar);
+  // console.log ('metar', metar);
   return {
     statusCode: 200,
     body: JSON.stringify (metar),
