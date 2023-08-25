@@ -20,11 +20,13 @@
 </script>
 
 <div class="metard">
-  <p>{metar_decoded}</p>
+  {metar_decoded}
 </div>
 
 <style>
-  .metard p {
-    background-color: black;
+  .metard {
+    background-color: rgb(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    font-size: 0.9em;
   }
 </style>

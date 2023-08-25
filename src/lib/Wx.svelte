@@ -105,7 +105,7 @@
   .city {
     min-width: 800px;
     height: 300px;
-    margin: auto;
+    margin-right: 5px;
     padding: 20px;
     border: 2px solid gray;
     border-radius: 10px;

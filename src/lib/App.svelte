@@ -98,14 +98,14 @@
 
 <style>
   .wrapper {
-    margin: 0 auto;
+    margin-right: 0px;
+    margin-left: 0px;
     display: grid;
-    height: 100svh;
-    width: 98svw;
+    height: 98svh;
+    width: 96svw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
-    width: 100svw;
     background-color: white;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 18fr 1fr;
@@ -134,19 +134,22 @@
   }
 
   .graphs {
-    margin: 1em;
+    margin-left: 1em;
     border: red;
     grid-area: wxcontent;
     overflow-y: auto;
   }
 
   .rule {
-    width: 80%;
+    width: 90%;
     height: 2px;
     color: gray;
   }
 
   .footer {
+    /* width: 98%; */
+    /* margin-left: 1em; */
+    margin-top: 2px;
     background-image: linear-gradient(to right, sienna, goldenrod);
     grid-area: footer;
   }

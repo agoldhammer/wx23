@@ -8,21 +8,23 @@
 <div id="locdata" class="locwxctr">
   {#if local_wx_data}
     <div class="wx">
-      <p>Cambridge, MA</p>
-      <p>Temp: {local_wx_data.main.temp}</p>
-      <p>Feels like: {local_wx_data.main.feels_like}</p>
-      <p>Min temp: {local_wx_data.main.temp_min}</p>
-      <p>Max temp: {local_wx_data.main.temp_max}</p>
-      <p>Pressure: {local_wx_data.main.pressure}</p>
-      <p>Wind: {local_wx_data.wind.speed} Dir: {local_wx_data.wind.deg}</p>
+      <h3>Cambridge, MA</h3>
+      <span>Temp: {local_wx_data.main.temp}</span>
+      <span>Feels like: {local_wx_data.main.feels_like}</span>
+      <span>Min temp: {local_wx_data.main.temp_min}</span>
+      <span>Max temp: {local_wx_data.main.temp_max}</span>
+      <span>Pressure: {local_wx_data.main.pressure}</span>
+      <span>Wind: {local_wx_data.wind.speed} Dir: {local_wx_data.wind.deg}</span
+      >
       {#if local_wx_data.wind.gust}
-        <p>Gust: {local_wx_data.wind.gust}</p>
+        <span>Gust: {local_wx_data.wind.gust}</span>
       {/if}
-      <p>Visibility: {local_wx_data.visibility}</p>
-      <p>Weather: {local_wx_data.weather[0].description}</p>
+      <span>Visibility: {local_wx_data.visibility}</span>
+      <span>Weather: {local_wx_data.weather[0].description}</span>
     </div>
   {/if}
   <div class="metar">
+    <h3>METARS</h3>
     {#each icaos as icao}
       <Metar {icao} />
     {/each}
@@ -34,6 +36,7 @@
 <style>
   .locwxctr {
     display: grid;
+    height: 100%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
@@ -46,7 +49,7 @@
     border-radius: 10px;
     color: white;
     /* text-align: left; */
-    margin: 0px;
+    margin-right: 20px;
     padding: 20px;
   }
 
@@ -54,16 +57,13 @@
     grid-area: wx;
     padding: 5px;
     display: flex;
-    align-self: stretch;
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   .metar {
     grid-area: metar;
     display: flex;
     flex-direction: column;
-    margin: 4px;
-    align-self: stretch;
-    padding: 20px;
   }
 </style>
