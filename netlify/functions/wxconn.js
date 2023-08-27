@@ -23,6 +23,10 @@ exports.handler = async event => {
   }
 
   let geodata_list = await response.json ();
+  // console.log ('geodata_list', city, country, geodata_list);
+  if (geodata_list.length === 0) {
+    throw new Error (`Geodata error ${city}, ${country}`);
+  }
   let geodata = geodata_list[0];
   let {lat, lon} = geodata;
 

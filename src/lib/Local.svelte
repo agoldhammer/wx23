@@ -11,10 +11,14 @@
       <h3>Cambridge, MA</h3>
       <span>Temp: {local_wx_data.main.temp}</span>
       <span>Feels like: {local_wx_data.main.feels_like}</span>
-      <span>Min temp: {local_wx_data.main.temp_min}</span>
-      <span>Max temp: {local_wx_data.main.temp_max}</span>
+      <span
+        >Temp range: {local_wx_data.main.temp_min}-{local_wx_data.main
+          .temp_max}</span
+      >
       <span>Pressure: {local_wx_data.main.pressure}</span>
-      <span>Wind: {local_wx_data.wind.speed} Dir: {local_wx_data.wind.deg}</span
+      <span>Humidity: {local_wx_data.main.humidity}</span>
+      <span
+        >Wind: {local_wx_data.wind.deg}° @ {local_wx_data.wind.speed} mph</span
       >
       {#if local_wx_data.wind.gust}
         <span>Gust: {local_wx_data.wind.gust}</span>
