@@ -13,12 +13,14 @@
   let groupdata: any[] = [];
   let showgraph: boolean = false;
   let local_promise: Promise<any>;
+  let time: Date;
 
   $: selected_cities = group_to_city_list(selected_city_group);
 
   onMount(async () => {
     groupdata = [];
     showgraph = false;
+    time = new Date();
     const response = await fetch("/.netlify/functions/local", {
       headers: { "Content-Type": "application/json" },
     });
@@ -92,7 +94,11 @@
     {/if}
   </div>
   <div class="footer">
-    <!-- <p>footer</p> -->
+    {#if !showgraph}
+      <span>{time}</span>
+    {:else}
+      {time.toISOString()}
+    {/if}
   </div>
 </div>
 
@@ -149,7 +155,11 @@
   .footer {
     /* width: 98%; */
     /* margin-left: 1em; */
-    margin-top: 2px;
+    color: white;
+    vertical-align: middle;
+    margin: 2px;
+    padding: 5px;
+    font-size: xx-small;
     background-image: linear-gradient(to right, sienna, goldenrod);
     grid-area: footer;
   }
