@@ -6,5 +6,6 @@
 
 <svelte:head>
   <title>Cosmic Weather App</title>
+  <link rel="manifest" href="site.webmanifest" />
 </svelte:head>
 <App />
