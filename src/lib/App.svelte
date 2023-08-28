@@ -85,7 +85,11 @@
       {#each groupdata as wxdata}
         <div class="wx-inner">
           <Wx {wxdata} />
-          <hr class="rule" />
+          <hr
+            class="rule"
+            data-city={wxdata.city}
+            data-country={wxdata.country}
+          />
         </div>
       {/each}
       <!-- {/key} -->
