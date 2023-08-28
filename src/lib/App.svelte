@@ -97,7 +97,9 @@
     {#if !showgraph}
       <span>{time}</span>
     {:else}
-      {time.toISOString()}
+      <span>
+        {time.toISOString()}
+      </span>
     {/if}
   </div>
 </div>
@@ -155,12 +157,16 @@
   .footer {
     /* width: 98%; */
     /* margin-left: 1em; */
+    display: flex;
+    align-items: center;
     color: white;
-    vertical-align: middle;
-    margin: 2px;
-    padding: 5px;
     font-size: xx-small;
     background-image: linear-gradient(to right, sienna, goldenrod);
     grid-area: footer;
+  }
+
+  .footer span {
+    margin: 6px;
+    padding: 5px;
   }
 </style>

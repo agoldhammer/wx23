@@ -78,6 +78,8 @@ const beij: City = { city: "Beijing", country: "CN" };
 const tokyo: City = { city: "Tokyo", country: "JP" };
 const hanoi: City = { city: "Hanoi", country: "VN" };
 const singa: City = { city: "Singapore", country: "SG" };
+const mumbai: City = { city: "Mumbai", country: "IN" };
+const sydney: City = { city: "Sydney", country: "AU" };
 
 export const city_groups: string[] = [
   "Capitals",
@@ -105,7 +107,7 @@ const group_to_cities = new Map([
   ["Austria", [vienna, inns, salz]],
   ["Switzerland", [geneva, zurich, bern]],
   ["Poland", [warsaw, danzig, krakow]],
-  ["Asia", [beij, tokyo, hanoi, singa]],
+  ["Asia", [beij, mumbai, tokyo, sydney, hanoi, singa]],
 ]);
 
 // const group_to_cities = new Map([["Capitals", [barcel, dublin]]]);
