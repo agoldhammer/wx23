@@ -91,11 +91,7 @@
         <div class="wx-inner">
           <Wx {wxdata} />
           <GraphFooter city={wxdata.city} country={wxdata.country} />
-          <hr
-            class="rule"
-            data-city={wxdata.city}
-            data-country={wxdata.country}
-          />
+          <hr class="rule" />
         </div>
       {/each}
       <!-- {/key} -->
@@ -159,9 +155,11 @@
   }
 
   .rule {
-    width: 90%;
+    min-width: 800px;
     height: 2px;
     color: gray;
+    margin-left: 25px;
+    margin-right: 25px;
   }
 
   .footer {
@@ -172,13 +170,12 @@
     color: white;
     border: 1px solid black;
     border-radius: 10px;
-    font-size: xx-small;
+    font-size: small;
     background-image: linear-gradient(to right, sienna, goldenrod);
     grid-area: footer;
   }
 
   .footer span {
-    margin: 6px;
     padding: 5px;
   }
 </style>

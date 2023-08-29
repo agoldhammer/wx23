@@ -33,9 +33,12 @@
 
 <style>
   .graph-footer {
-    margin: 2px;
+    margin-top: 2px;
     color: white;
-    /* background-color: sienna; */
+    min-width: 800px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 4px;
     background-image: linear-gradient(to right, sienna, goldenrod);
     border: 1px solid black;
     border-radius: 10px;
