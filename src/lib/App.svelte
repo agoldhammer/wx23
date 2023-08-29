@@ -3,6 +3,7 @@
   import Wx from "./Wx.svelte";
   import Local from "./Local.svelte";
   import Spinner from "./Spinner.svelte";
+  import GraphFooter from "./GraphFooter.svelte";
   import { onMount } from "svelte";
   // @ts-ignore
   import type { City } from "./Cities";
@@ -21,7 +22,11 @@
     groupdata = [];
     showgraph = false;
     time = new Date();
-    const response = await fetch("/.netlify/functions/local", {
+    const parms = new URLSearchParams({
+      city: "Cambridge",
+      country: "US",
+    }).toString();
+    const response = await fetch(`/.netlify/functions/local?${parms}`, {
       headers: { "Content-Type": "application/json" },
     });
     local_promise = response.json();
@@ -85,6 +90,7 @@
       {#each groupdata as wxdata}
         <div class="wx-inner">
           <Wx {wxdata} />
+          <GraphFooter city={wxdata.city} country={wxdata.country} />
           <hr
             class="rule"
             data-city={wxdata.city}
@@ -164,6 +170,8 @@
     display: flex;
     align-items: center;
     color: white;
+    border: 1px solid black;
+    border-radius: 10px;
     font-size: xx-small;
     background-image: linear-gradient(to right, sienna, goldenrod);
     grid-area: footer;

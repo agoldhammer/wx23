@@ -1,8 +1,11 @@
 const appid = process.env.appid;
 
 exports.handler = async event => {
-  let city = 'Cambridge';
-  let country = 'US';
+  // let city = 'Cambridge';
+  // let country = 'US';
+  let city = event.queryStringParameters.city;
+  let country = event.queryStringParameters.country;
+  // console.log ('local', city, country);
 
   const geoapi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}%2C${country}&limit=1&appid=${appid}`;
   let response = await fetch (geoapi, {method: 'GET'});
