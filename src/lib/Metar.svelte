@@ -9,12 +9,13 @@
     let metar = await fetch(`/.netlify/functions/metar?icao=${icao}`, {
       headers: { "Content-Type": "application/json" },
     });
-    const metarx: any[] = await metar.json();
+    const metarx: any = await metar.json();
+    // console.log(metarx);
     if (metarx.length === 0) {
       metar_decoded = `${icao} Metar N/A`;
     } else {
       //   console.log("metarx", icao, metarx[0].rawOb);
-      metar_decoded = metarx[0].rawOb;
+      metar_decoded = metarx;
     }
   });
 </script>
