@@ -6,7 +6,6 @@ exports.handler = async event => {
   const text = await response.text ();
   // must slice off last item in split, which will be blank b/c of trailing newline
   const metars = text.split ('\n').slice (0, -1);
-  console.log ('metar list', metars);
   return {
     statusCode: 200,
     body: JSON.stringify (metars),

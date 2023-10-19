@@ -1,7 +1,15 @@
 <script lang="ts">
   import Metar from "./Metar.svelte";
+  import { onMount } from "svelte";
   export let local_wx_data: any;
   const icaos = ["KBOS", "KBED", "KOWD", "KORH", "KMHT"];
+
+  let metars: string[] = [];
+
+  onMount(async () => {
+    let metar_list = await fetch(`/.netlify/functions/multimetar`, {});
+    metars = await metar_list.json();
+  });
 </script>
 
 <!-- <div class="opener"> -->
@@ -29,8 +37,8 @@
   {/if}
   <div class="metar">
     <h3>METARS</h3>
-    {#each icaos as icao}
-      <Metar {icao} />
+    {#each metars as metar}
+      <Metar {metar} />
     {/each}
   </div>
 </div>
