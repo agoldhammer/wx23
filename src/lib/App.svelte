@@ -13,7 +13,7 @@
   let selected_city_group = "";
   let groupdata: any[] = [];
   let showgraph: boolean = false;
-  let local_promise: Promise<any>;
+  let local_wx_data: any;
   let time: Date;
 
   $: selected_cities = group_to_city_list(selected_city_group);
@@ -29,7 +29,7 @@
     const response = await fetch(`/.netlify/functions/local?${parms}`, {
       headers: { "Content-Type": "application/json" },
     });
-    local_promise = response.json();
+    local_wx_data = await response.json();
   });
 
   async function fetchCityData(city: City) {
@@ -77,14 +77,9 @@
   </div>
   <div class="graphs">
     {#if !showgraph}
-      {#await local_promise}
-        <Spinner />
-        <!-- <p>waiting ....</p> -->
-      {:then local_wx_data}
+      {#if local_wx_data}
         <Local {local_wx_data} />
-      {:catch error}
-        <p>{error.message}</p>
-      {/await}
+      {/if}
     {:else if groupdata.length !== 0}
       <!-- {#key groupdata} -->
       {#each groupdata as wxdata}
