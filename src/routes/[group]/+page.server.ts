@@ -15,11 +15,18 @@ export async function load({ params }) {
   const coords = geodata.map((item) => [item.lat, item.lon]);
   console.log(coords);
   // for each pair of city coords, fetch weather data
-  const wxdata_raw = coords.map((coord) =>
+  //
+  const wxdata_raw: any[] = coords.map((coord) =>
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${coord[0]}&lon=${coord[1]}&appid=${appid}&units=imperial`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${coord[0]}&lon=${coord[1]}&appid=${appid}&units=imperial`
     ).then((resp) => resp.json())
   );
+
+  //   const wx2 = await fetch(
+  //     `https://api.openweathermap.org/data/2.5/forecast?lat=48.2083535&lon=16.3725042&appid=${appid}&units=imperial`
+  //   ).then((resp) => resp.json());
+  //   console.log("wx2", wx2);
+
   const wxdata_group = await Promise.all(wxdata_raw);
   console.log("server wxdata_group", wxdata_group, wxdata_group.length);
 

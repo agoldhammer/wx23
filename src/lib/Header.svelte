@@ -1,6 +1,7 @@
 <script lang="ts">
-  export let selected_city_group; // this is passed to parent App
-  export let city_groups: string[]; // def received from parent App
+  import { city_groups } from "./Cities";
+  let selected_city_group; // this is passed to parent App
+  // export let city_groups: string[]; // def received from parent App
 
   function process(event: any): void {
     selected_city_group = event.target.id;

@@ -4,12 +4,12 @@
   import App from "$lib/App.svelte";
   import Metar from "$lib/Metar.svelte";
   export let data;
-  console.log(data);
+  // console.log(data);
   const body = JSON.parse(data.body);
-  console.log(body.metars);
+  // console.log(body.metars);
   let metars = body.metars;
   const local_wx_data = body.local_wx_data;
-  console.log(local_wx_data);
+  // console.log(local_wx_data);
 </script>
 
 <svelte:head>
@@ -66,7 +66,7 @@
     border: 4px solid darkgray;
     border-radius: 10px;
     color: white;
-    /* text-align: left; */
+    margin-top: 1em;
     margin-right: 20px;
     padding: 20px;
   }

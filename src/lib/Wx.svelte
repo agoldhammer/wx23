@@ -4,6 +4,7 @@
   import "chartjs-adapter-date-fns";
   import type { ChartData, ChartDataset } from "chart.js";
   export let wxdata: any;
+  // console.log("Wx", wxdata);
 
   let dataLine: ChartData<"line", number[]> = {
     labels: wxdata.times_text,
@@ -106,6 +107,7 @@
     min-width: 800px;
     height: 300px;
     margin-right: 5px;
+    margin-top: 15px;
     padding: 20px;
     border: 2px solid gray;
     border-radius: 10px;
