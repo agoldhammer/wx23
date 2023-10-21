@@ -1,7 +1,7 @@
 <script lang="ts">
   // export let data;
   // console.log("page", data);
-  import App from "$lib/App.svelte";
+  // import App from "$lib/App.svelte";
   import Metar from "$lib/Metar.svelte";
   export let data;
   // console.log(data);

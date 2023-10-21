@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Line } from "svelte-chartjs";
+  import GraphFooter from "./GraphFooter.svelte";
   import { Chart } from "chart.js/auto";
   import "chartjs-adapter-date-fns";
   import type { ChartData, ChartDataset } from "chart.js";
@@ -100,6 +101,7 @@
       },
     }}
   />
+  <!-- <GraphFooter city={wxdata.city} country={wxdata.country} /> -->
 </div>
 
 <style>

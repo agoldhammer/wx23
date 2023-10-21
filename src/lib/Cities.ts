@@ -91,7 +91,7 @@ export const city_groups: string[] = [
   "Iberia",
   "Italy",
   "Poland",
-  "UK/IE",
+  "UK-IE",
   "Asia",
 ];
 
@@ -102,7 +102,7 @@ const group_to_cities = new Map([
   ["Germany", [berlin, duss, koln, bonn, frank, hamb]],
   ["Italy", [rome, milan, naples, flo, pal, siena, venice]],
   ["Iberia", [madrid, barcel, lisbon]],
-  ["UK/IE", [london, manchester, birmingham, edin, dublin, cork]],
+  ["UK-IE", [london, manchester, birmingham, edin, dublin, cork]],
   ["Benelux", [bruss, amst]],
   ["Austria", [vienna, inns, salz]],
   ["Switzerland", [geneva, zurich, bern]],

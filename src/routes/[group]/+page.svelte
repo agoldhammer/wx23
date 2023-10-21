@@ -1,25 +1,24 @@
 <script lang="ts">
   import Wx from "$lib/Wx.svelte";
   export let data;
-  const wx = JSON.parse(data.body);
-  const wxdata_group: any[] = wx.wxdata_group;
-  console.log("page", wxdata_group);
+  $: wx = JSON.parse(data.body);
+  type WxNums = number[];
 
   function massage_wxdata(unmassaged_data: any) {
     // console.log("massage", unmassaged_data);
     // convert raw city data into desired format
     const city = unmassaged_data.city.name;
     const country = unmassaged_data.city.country;
-    let times = [];
-    let temps = [];
-    let mintemps = [];
-    let maxtemps = [];
-    let pressures = [];
-    let humidities = [];
-    let winds = [];
-    let clouds = [];
-    let visibilities = [];
-    let times_text = [];
+    let times: WxNums = [];
+    let temps: WxNums = [];
+    let mintemps: WxNums = [];
+    let maxtemps: WxNums = [];
+    let pressures: WxNums = [];
+    let humidities: WxNums = [];
+    let winds: WxNums = [];
+    let clouds: WxNums = [];
+    let visibilities: WxNums = [];
+    let times_text: string[] = [];
 
     const wxdata_massaged = unmassaged_data.list.forEach((x: any) => {
       //   console.log("x", x);
@@ -38,7 +37,6 @@
     const wxret = {
       city: city,
       country: country,
-      //   country: country,
       times: times,
       temps: temps,
       pressures: pressures,
@@ -54,7 +52,7 @@
     return wxret;
   }
 
-  const massaged_wxdata_group = wxdata_group.map((x) => massage_wxdata(x));
+  $: massaged_wxdata_group = wx.wxdata_group.map((x: any) => massage_wxdata(x));
 
   //   console.log("massaging", massaged_wxdata_group);
   //   console.log("wxdata_group", wxdata_group);
