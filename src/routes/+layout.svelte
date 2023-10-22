@@ -20,6 +20,7 @@
   </div>
   <div class="footer">
     <span>{time.toUTCString()}</span>
+    <span>Ver. 0.1 beta</span>
   </div>
 </div>
 
@@ -69,6 +70,7 @@
   .footer {
     width: 98%;
     margin-left: 1em;
+    gap: 2em;
     padding: 8px;
     display: flex;
     align-items: center;
