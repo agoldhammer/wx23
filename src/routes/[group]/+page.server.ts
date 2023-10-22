@@ -5,7 +5,7 @@ import { group_to_city_list } from "$lib/Cities";
 
 export async function load({ params }) {
   let group = params.group;
-  console.log("server", group);
+  // console.log("server", group);
   const city_list = group_to_city_list(group);
   const geodata_raw = city_list.map((item) =>
     fetch(
