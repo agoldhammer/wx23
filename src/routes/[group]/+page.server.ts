@@ -24,6 +24,23 @@ export async function load({ params }) {
 
   const wxdata_group = await Promise.all(wxdata_raw);
 
+  // need current weather for each city
+  let current_wxs_promises = coords.map((coord) =>
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${coord[0]}&lon=${coord[1]}&appid=${appid}&units=imperial`,
+      { method: "GET" }
+    ).then((resp) => resp.json())
+  );
+  const current_wxs = await Promise.all(current_wxs_promises);
+  // console.log("currents", current_wxs);
+
+  for (let i = 0; i < city_list.length; i++) {
+    wxdata_group[i].citystate = city_list[i];
+    wxdata_group[i].current = current_wxs[i];
+  }
+
+  // console.log("svr augmented", wxdata_catalog);
+
   return {
     statusCode: 200,
     body: JSON.stringify({ wxdata_group: wxdata_group }),

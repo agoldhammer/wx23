@@ -5,7 +5,6 @@
   import "chartjs-adapter-date-fns";
   import type { ChartData, ChartDataset } from "chart.js";
   export let wxdata: any;
-  // console.log("Wx", wxdata);
 
   let dataLine: ChartData<"line", number[]> = {
     labels: wxdata.times_text,
@@ -59,49 +58,51 @@
   };
 </script>
 
-<div class="city">
-  <Line
-    data={dataLine}
-    options={{
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          type: "timeseries",
-          ticks: { source: "labels" },
-          time: {
-            tooltipFormat: "MM-dd @ HH:mm",
-            unit: "day",
-            displayFormats: {
-              day: "MM-dd HH:mm",
+<div class="graph">
+  <div class="city">
+    <Line
+      data={dataLine}
+      options={{
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            type: "timeseries",
+            ticks: { source: "labels" },
+            time: {
+              tooltipFormat: "MM-dd @ HH:mm",
+              unit: "day",
+              displayFormats: {
+                day: "MM-dd HH:mm",
+              },
+            },
+          },
+          L: {
+            type: "linear",
+            display: true,
+            position: "left",
+          },
+          R: {
+            type: "linear",
+            display: true,
+            position: "right",
+            grid: {
+              drawOnChartArea: false,
+            },
+            ticks: {
+              callback: (value, index, ticks) => {
+                return value; // needed to eliminate comma
+              },
             },
           },
         },
-        L: {
-          type: "linear",
-          display: true,
-          position: "left",
+        plugins: {
+          title: { display: true, text: `${wxdata.city}, ${wxdata.country}` },
         },
-        R: {
-          type: "linear",
-          display: true,
-          position: "right",
-          grid: {
-            drawOnChartArea: false,
-          },
-          ticks: {
-            callback: (value, index, ticks) => {
-              return value; // needed to eliminate comma
-            },
-          },
-        },
-      },
-      plugins: {
-        title: { display: true, text: `${wxdata.city}, ${wxdata.country}` },
-      },
-    }}
-  />
-  <!-- <GraphFooter city={wxdata.city} country={wxdata.country} /> -->
+      }}
+    />
+  </div>
+  <GraphFooter citydata={wxdata.current} />
 </div>
 
 <style>
@@ -114,5 +115,6 @@
     border: 2px solid gray;
     border-radius: 10px;
     overflow-x: auto;
+    overflow-y: hidden;
   }
 </style>

@@ -19,7 +19,7 @@
     {/if}
   </div>
   <div class="footer">
-    <span>{time.toISOString()}</span>
+    <span>{time.toUTCString()}</span>
   </div>
 </div>
 
