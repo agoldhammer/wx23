@@ -13,7 +13,7 @@
     <Header />
   </div>
   <!-- The if is needed to suppress spurious warning -->
-  <div class="graphs">
+  <div id="graphctr" class="graphs">
     {#if true}
       <slot />
     {/if}

@@ -29,9 +29,9 @@
   .graph-footer {
     margin-top: 2px;
     color: white;
-    width: inherit;
-    /* margin-left: 8px; */
-    /* margin-right: 8px; */
+    min-width: 800px;
+    margin-left: 8px;
+    margin-right: 8px;
     padding-left: 8px;
     padding-top: 2px;
     padding-bottom: 2px;
