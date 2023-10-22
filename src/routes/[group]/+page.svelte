@@ -3,8 +3,8 @@
   import Wx from "$lib/Wx.svelte";
   export let data;
   // console.log("data", data);
-  const wx = JSON.parse(data.body);
-  const wxdata_group = wx.wxdata_group;
+  $: wx = JSON.parse(data.body);
+  $: wxdata_group = wx.wxdata_group;
   // console.log("wx!!!!", wxdata_group);
 
   function massage_wxdata(unmassaged_data: any) {
@@ -57,7 +57,7 @@
     return wxret;
   }
 
-  const massaged_wxdata_group = wxdata_group.map((x: any) => massage_wxdata(x));
+  $: massaged_wxdata_group = wxdata_group.map((x: any) => massage_wxdata(x));
 
   // console.log("massaging", massaged_wxdata_group);
   //   console.log("wxdata_group", wxdata_group);

@@ -5,6 +5,7 @@ import { group_to_city_list } from "$lib/Cities";
 
 export async function load({ params }) {
   let group = params.group;
+  console.log("server", group);
   const city_list = group_to_city_list(group);
   const geodata_raw = city_list.map((item) =>
     fetch(
@@ -39,7 +40,7 @@ export async function load({ params }) {
     wxdata_group[i].current = current_wxs[i];
   }
 
-  // console.log("svr augmented", wxdata_catalog);
+  // console.log("svr augmented", wxdata_group);
 
   return {
     statusCode: 200,

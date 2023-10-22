@@ -5,7 +5,12 @@
 
   function process(event: any): void {
     let selected_city_group = event.target.id;
-    goto(`/${selected_city_group}`);
+    const path = `/${selected_city_group}`;
+    // console.log("process", path);
+    goto(path, {
+      invalidateAll: true,
+      replaceState: true,
+    });
   }
 </script>
 
