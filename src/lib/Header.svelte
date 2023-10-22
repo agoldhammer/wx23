@@ -1,11 +1,10 @@
 <script lang="ts">
   import { city_groups } from "./Cities";
   import { goto } from "$app/navigation";
-  let selected_city_group; // this is passed to parent App
-  // export let city_groups: string[]; // def received from parent App
+  // let selected_city_group;
 
   function process(event: any): void {
-    selected_city_group = event.target.id;
+    let selected_city_group = event.target.id;
     goto(`/${selected_city_group}`);
   }
 </script>
