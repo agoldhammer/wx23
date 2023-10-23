@@ -19,7 +19,7 @@
     {/if}
   </div>
   <div class="footer">
-    <span>{time.toUTCString()}</span>
+    <span>{time}</span>
     <span>Ver. 0.1 beta</span>
   </div>
 </div>
@@ -30,7 +30,7 @@
     margin-left: 0px;
     display: grid;
     height: 98svh;
-    width: 96svw;
+    width: 98dvw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
@@ -45,9 +45,9 @@
       "footer";
   }
   .wxheader {
-    width: 95%;
+    width: 96%;
     background-color: linen;
-    margin: auto;
+    margin: 2px 16px 2px;
     display: flex;
     flex-direction: row;
     flex-basis: auto;
@@ -61,19 +61,23 @@
   }
 
   .graphs {
+    width: 98%;
     margin-left: 1em;
+    /* margin-right: 2px; */
     border: red;
     grid-area: wxcontent;
     overflow-y: auto;
   }
 
   .footer {
-    width: 98%;
+    width: 96%;
     margin-left: 1em;
+    margin-right: 1em;
     gap: 2em;
     padding: 8px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: white;
     border: 1px solid black;
     border-radius: 10px;
