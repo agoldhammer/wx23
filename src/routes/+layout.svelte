@@ -26,11 +26,10 @@
 
 <style>
   .wrapper {
-    margin-right: 2px;
     margin-left: 0px;
     display: grid;
     height: 98svh;
-    width: 96svw;
+    width: 95svw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
@@ -61,7 +60,7 @@
   }
 
   .graphs {
-    width: 98%;
+    width: 94%;
     margin-left: 1em;
     /* margin-right: 2px; */
     border: red;
