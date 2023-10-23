@@ -26,11 +26,11 @@
 
 <style>
   .wrapper {
-    margin-right: 0px;
+    margin-right: 2px;
     margin-left: 0px;
     display: grid;
     height: 98svh;
-    width: 96dvw;
+    width: 96svw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
@@ -45,7 +45,7 @@
       "footer";
   }
   .wxheader {
-    width: 96%;
+    width: 93%;
     background-color: linen;
     margin: 2px 16px 2px;
     display: flex;
@@ -70,7 +70,7 @@
   }
 
   .footer {
-    width: 96%;
+    width: 90%;
     margin-left: 1em;
     margin-right: 1em;
     gap: 2em;
