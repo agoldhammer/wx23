@@ -25,7 +25,7 @@
 </script>
 
 <!-- <div class="wxheader"> -->
-<button id="local" on:click={process}>Local</button>
+<button id="local" on:click={process}>Home</button>
 {#each city_groups as city_group}
   <button id={city_group} on:click={process}>{city_group}</button>
 {/each}
