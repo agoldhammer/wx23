@@ -30,7 +30,7 @@
     margin-left: 0px;
     display: grid;
     height: 98svh;
-    width: 98dvw;
+    width: 96dvw;
     padding: 2px;
     border: 2px solid blue;
     border-radius: 10px;
