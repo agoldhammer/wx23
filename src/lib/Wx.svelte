@@ -6,7 +6,7 @@
   import type { ChartData, ChartDataset } from "chart.js";
   export let wxdata: any;
 
-  let dataLine: ChartData<"line", number[]> = {
+  $: dataLine = {
     labels: wxdata.times_text,
     // labels: wxdata.times,
     datasets: [
@@ -56,6 +56,8 @@
       } as ChartDataset<"line", number[]>,
     ],
   };
+
+  $: citydata = wxdata.current;
 </script>
 
 <div class="graph">
@@ -102,7 +104,7 @@
       }}
     />
   </div>
-  <GraphFooter citydata={wxdata.current} />
+  <GraphFooter {citydata} />
 </div>
 
 <style>

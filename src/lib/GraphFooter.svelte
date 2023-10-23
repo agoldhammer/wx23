@@ -1,21 +1,7 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-
   export let citydata: any = null;
-  const name = citydata.name;
-  const weather = citydata.weather[0].description;
-  const temp = citydata.main.temp;
-
-  // onMount(async () => {
-  //   const parms = new URLSearchParams({
-  //     city: city,
-  //     country: country,
-  //   }).toString();
-  //   const response = await fetch(`/.netlify/functions/local?${parms}`, {
-  //     headers: { "Content-Type": "application/json" },
-  //   });
-  //   citydata = await response.json();
-  // });
+  $: weather = citydata.weather[0].description;
+  $: temp = citydata.main.temp;
 </script>
 
 <div class="graph-footer">
