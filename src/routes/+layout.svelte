@@ -1,18 +1,13 @@
 <script lang="ts">
   import Header from "$lib/Header.svelte";
-  //   // @ts-ignore
-  //   import type { City } from "./Cities";
-  //   // @ts-ignore
-  //   import { city_groups, group_to_city_list } from "./Cities";
-  let time: Date = new Date();
+  $: time = new Date();
 </script>
 
-<!-- <Header /> -->
 <div class="wrapper">
   <div class="wxheader">
     <Header />
   </div>
-  <!-- The if is needed to suppress spurious warning -->
+  <!-- ? The if is needed to suppress spurious warning -->
   <div id="graphctr" class="graphs">
     {#if true}
       <slot />
@@ -62,7 +57,6 @@
   .graphs {
     width: 94%;
     margin-left: 1em;
-    /* margin-right: 2px; */
     border: red;
     grid-area: wxcontent;
     overflow-y: auto;
