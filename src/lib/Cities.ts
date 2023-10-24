@@ -110,8 +110,6 @@ const group_to_cities = new Map([
   ["Asia", [beij, mumbai, tokyo, sydney, hanoi, singa]],
 ]);
 
-// const group_to_cities = new Map([["Capitals", [barcel, dublin]]]);
-
 export function group_to_city_list(city_group: string): City[] {
   const city_list = group_to_cities.get(city_group);
 

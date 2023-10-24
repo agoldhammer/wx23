@@ -5,6 +5,7 @@ import { group_to_city_list } from "$lib/Cities";
 
 export async function load({ params }) {
   let group = params.group;
+  /* ! Fetch forecasts and current weather for each citystate in group */
   // console.log("server", group);
   const city_list = group_to_city_list(group);
   const geodata_raw = city_list.map((item) =>
@@ -15,7 +16,7 @@ export async function load({ params }) {
   const geodata = await Promise.all(geodata_raw);
   const coords = geodata.map((item) => [item.lat, item.lon]);
   //   console.log(coords);
-  // for each pair of city coords, fetch weather data
+  /* ! for each pair of city coords, fetch weather data */
   //
   const wxdata_raw: any[] = coords.map((coord) =>
     fetch(
@@ -25,7 +26,7 @@ export async function load({ params }) {
 
   const wxdata_group = await Promise.all(wxdata_raw);
 
-  // need current weather for each city
+  /* ! need current weather for each city */
   let current_wxs_promises = coords.map((coord) =>
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${coord[0]}&lon=${coord[1]}&appid=${appid}&units=imperial`,

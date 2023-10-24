@@ -12,9 +12,7 @@
       path = `/${target}`;
     }
     const graphctr = document.getElementById("graphctr");
-    // let selected_city_group = event.target.id;
-    // const path = `/${selected_city_group}`;
-    // console.log("process", path);
+    /* ! Invalidate to purge old data */
     goto(path, {
       invalidateAll: true,
       replaceState: true,

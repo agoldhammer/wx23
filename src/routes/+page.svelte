@@ -20,8 +20,6 @@
   <link rel="manifest" href="site.webmanifest" />
 </svelte:head>
 
-<!-- <App /> -->
-<!-- <Metar > -->
 <div id="locdata" class="locwxctr">
   <div class="wx">
     <h3>Cambridge, MA</h3>
@@ -48,8 +46,6 @@
     {/each}
   </div>
 </div>
-
-<!-- </div> -->
 
 <style>
   .locwxctr {
