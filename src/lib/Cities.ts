@@ -85,6 +85,8 @@ const sydney: City = { city: "Sydney", country: "AU" };
 const buju: City = { city: "Bujumbura", country: "BI" };
 const abuja: City = { city: "Abuja", country: "NG" };
 const capet: City = { city: "Cape Town", country: "ZA" };
+const cairo: City = { city: "Cairo", country: "EG" };
+const nairo: City = { city: "Nairobi", country: "KE" };
 
 export const city_groups: string[] = [
   "Capitals",
@@ -114,7 +116,7 @@ const group_to_cities = new Map([
   ["Switzerland", [geneva, zurich, bern]],
   ["Poland", [warsaw, danzig, krakow]],
   ["Asia", [beij, mumbai, tokyo, sydney, hanoi, singa]],
-  ["Africa", [buju, abuja, capet]],
+  ["Africa", [buju, abuja, capet, cairo, nairo]],
 ]);
 
 export function group_to_city_list(city_group: string): City[] {
