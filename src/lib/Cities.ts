@@ -87,6 +87,7 @@ const abuja: City = { city: "Abuja", country: "NG" };
 const capet: City = { city: "Cape Town", country: "ZA" };
 const cairo: City = { city: "Cairo", country: "EG" };
 const nairo: City = { city: "Nairobi", country: "KE" };
+const kigali: City = { city: "Kigali", country: "CD" };
 
 // Latin American cities
 const buair: City = { city: "Buenos Aires", country: "AR" };
