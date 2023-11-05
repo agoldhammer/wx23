@@ -88,6 +88,14 @@ const capet: City = { city: "Cape Town", country: "ZA" };
 const cairo: City = { city: "Cairo", country: "EG" };
 const nairo: City = { city: "Nairobi", country: "KE" };
 
+// Latin American cities
+const buair: City = { city: "Buenos Aires", country: "AR" };
+const santia: City = { city: "Santiago", country: "CL" };
+const brasil: City = { city: "Brasilia", country: "BR" };
+const bogot: City = { city: "Bogota", country: "CO" };
+const sanjo: City = { city: "San Jose", country: "CR" };
+const mexico: City = { city: "Mexico City", country: "MX" };
+
 export const city_groups: string[] = [
   "Capitals",
   "US",
@@ -101,6 +109,7 @@ export const city_groups: string[] = [
   "UK-IE",
   "Asia",
   "Africa",
+  "LatAm",
 ];
 
 const group_to_cities = new Map([
@@ -117,6 +126,7 @@ const group_to_cities = new Map([
   ["Poland", [warsaw, danzig, krakow]],
   ["Asia", [beij, mumbai, tokyo, sydney, hanoi, singa]],
   ["Africa", [buju, abuja, capet, cairo, nairo]],
+  ["LatAm", [buair, santia, brasil, bogot, sanjo, mexico]],
 ]);
 
 export function group_to_city_list(city_group: string): City[] {
