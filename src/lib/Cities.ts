@@ -87,7 +87,7 @@ const abuja: City = { city: "Abuja", country: "NG" };
 const capet: City = { city: "Cape Town", country: "ZA" };
 const cairo: City = { city: "Cairo", country: "EG" };
 const nairo: City = { city: "Nairobi", country: "KE" };
-const kigali: City = { city: "Kigali", country: "CD" };
+const kigali: City = { city: "Kigali", country: "RW" };
 
 // Latin American cities
 const buair: City = { city: "Buenos Aires", country: "AR" };
@@ -126,7 +126,7 @@ const group_to_cities = new Map([
   ["Switzerland", [geneva, zurich, bern]],
   ["Poland", [warsaw, danzig, krakow]],
   ["Asia", [beij, mumbai, tokyo, sydney, hanoi, singa]],
-  ["Africa", [buju, abuja, capet, cairo, nairo]],
+  ["Africa", [buju, abuja, capet, cairo, nairo, kigali]],
   ["LatAm", [buair, santia, brasil, bogot, sanjo, mexico]],
 ]);
 
